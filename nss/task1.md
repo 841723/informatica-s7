@@ -1,11 +1,9 @@
-# Task 1
+# Debian (Linux)
 
-## Debian (Linux)
-
-- Configure the network in `/etc/network/interfaces`:
-    - Router: 
-        - int_net_1
-            - add 
+-   Configure the network in `/etc/network/interfaces`:
+    -   Router:
+        -   int_net_1
+            -   add
                 ```
                 auto enp0s8
                 iface enp0s8 inet static
@@ -13,8 +11,8 @@
                     network 192.168.11.0
                     netmask 255.255.255.0
                 ```
-        - int_net_2
-            - add 
+        -   int_net_2
+            -   add
                 ```
                 auto enp0s9
                 iface enp0s8 inet static
@@ -22,9 +20,9 @@
                     network 192.168.22.0
                     netmask 255.255.255.0
                 ```
-    - Client:
-        - int_net_1
-            - add 
+    -   Client:
+        -   int_net_1
+            -   add
                 ```
                 auto enp0s8
                 iface enp0s8 inet static
@@ -32,9 +30,9 @@
                     network 192.168.11.0
                     netmask 255.255.255.0
                 ```
-    - Server:
-        - int_net_2
-            - add 
+    -   Server:
+        -   int_net_2
+            -   add
                 ```
                 auto enp0s8
                 iface enp0s8 inet static
@@ -43,33 +41,32 @@
                     netmask 255.255.255.0
                 ```
 
+# Windows
 
+-   Configure the network:
 
-## Windows
-
-- Configure the network:
-    - Router: 
-        - int_net_1
+    -   Router:
+        -   int_net_1
             ```
-            address: 192.168.111.1 
+            address: 192.168.111.1
             netmask: 255.255.255.0
             ```
-        - int_net_2
+        -   int_net_2
             ```
             address: 192.168.222.1
             netmask: 255.255.255.0
             ```
-    - Client:
-        - int_net_1
+    -   Client:
+        -   int_net_1
             ```
             address: 192.168.111.111
             netmask: 255.255.255.0
             ```
-    - Server:
-        - int_net_2
+    -   Server:
+        -   int_net_2
             ```
             address: 192.168.222.222
             netmask: 255.255.255.0
             ```
 
-- Enable ICMP echo request in firewall in each machine
+-   Enable ICMP echo request in firewall in each machine
