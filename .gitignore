@@ -1,0 +1,10 @@
+**/node_modules/**
+**/.venv/**
+
+bk121/CANoe18SP2/**
+bk121/stm32/**
+bk121/*.zip
+
+mwd
+
+nss/virtual/**
