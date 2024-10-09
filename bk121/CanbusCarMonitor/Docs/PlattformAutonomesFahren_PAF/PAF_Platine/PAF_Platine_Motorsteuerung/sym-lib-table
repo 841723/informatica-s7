@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Schrittmotoransteuerung2_0-rescue)(type Legacy)(uri ${KIPRJMOD}/Schrittmotoransteuerung2_0-rescue.lib)(options "")(descr ""))
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Schrittmotor)(type Legacy)(uri C:/Users/tobia/OneDrive/Dokumente/FH/6/Embedded/Auto_Uart/Schrittmotoransteuerung2_0-rescue.lib)(options "")(descr ""))
+  (lib (name DC-DC-Wandler)(type Legacy)(uri C:/Users/tobia/OneDrive/Dokumente/FH/6/Embedded/SamacSys_Parts.lib)(options "")(descr ""))
+)

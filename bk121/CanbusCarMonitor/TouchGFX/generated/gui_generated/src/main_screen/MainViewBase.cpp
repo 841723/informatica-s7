@@ -5,7 +5,8 @@
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
 
-MainViewBase::MainViewBase()
+MainViewBase::MainViewBase() :
+    buttonCallback(this, &MainViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -15,15 +16,10 @@ MainViewBase::MainViewBase()
     backgroundImage.setBitmap(touchgfx::Bitmap(BITMAP_BG_ID));
     add(backgroundImage);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_IMAGE00_ID));
-    scalableImage1.setPosition(19, 52, 75, 75);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    add(scalableImage1);
-
-    scalableImage2.setBitmap(touchgfx::Bitmap(BITMAP_IMAGE00_ID));
-    scalableImage2.setPosition(19, 146, 75, 75);
-    scalableImage2.setScalingAlgorithm(touchgfx::ScalableImage::BILINEAR_INTERPOLATION);
-    add(scalableImage2);
+    button1.setXY(120, 111);
+    button1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    button1.setAction(buttonCallback);
+    add(button1);
 }
 
 MainViewBase::~MainViewBase()
@@ -34,4 +30,15 @@ MainViewBase::~MainViewBase()
 void MainViewBase::setupScreen()
 {
 
+}
+
+void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &button1)
+    {
+        //Interaction1
+        //When button1 clicked call virtual function
+        //Call handleClickButton1
+        handleClickButton1();
+    }
 }

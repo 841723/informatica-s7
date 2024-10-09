@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\User\Desktop\Schrittmotoransteuerung2_0\Schrittmotoransteuerung2_0.sch</source>
+    <date>21.04.2022 12:05:53</date>
+    <tool>Eeschema (5.1.10)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Schrittmotoransteuerung2_0.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="IC2">
+      <value>DSPIC33EP512GP502-I_SP</value>
+      <footprint>Package_DIP:DIP-28_W7.62mm_Socket_LongPads</footprint>
+      <datasheet>https://componentsearchengine.com/Datasheets/1/dsPIC33EP512GP502-I_SP.pdf</datasheet>
+      <fields>
+        <field name="Description">Microchip DSPIC33EP512GP502-I/SP, 16bit dsPIC Microcontroller, 5.5MHz, 512 kB Flash, 28-Pin PDIP</field>
+        <field name="Height">5.08</field>
+        <field name="Manufacturer_Name">Microchip</field>
+        <field name="Manufacturer_Part_Number">DSPIC33EP512GP502-I/SP</field>
+        <field name="Mouser Part Number">579-33EP512GP502ISP</field>
+        <field name="Mouser Price/Stock">https://www.mouser.com/Search/Refine.aspx?Keyword=579-33EP512GP502ISP</field>
+      </fields>
+      <libsource lib="Schrittmotoransteuerung2_0-rescue" part="DSPIC33EP512GP502-I_SP-DSPIC33EP512GP502-I_SP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61B742C8</tstamp>
+    </comp>
+    <comp ref="IC1">
+      <value>MCP2562FDT-H_SN</value>
+      <footprint>Package_DIP:DIP-8_W7.62mm_Socket_LongPads</footprint>
+      <datasheet>http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en568915</datasheet>
+      <fields>
+        <field name="Description">CAN Interface IC CAN Flexible Data Rate Transceiver</field>
+        <field name="Height">1.75</field>
+        <field name="Manufacturer_Name">Microchip</field>
+        <field name="Manufacturer_Part_Number">MCP2562FDT-H/SN</field>
+        <field name="Mouser Part Number">579-MCP2562FDT-H/SN</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP2562FDT-H-SN?qs=YlpJWyuQ3PMXmsmdO4TKrg%3D%3D</field>
+      </fields>
+      <libsource lib="Schrittmotoransteuerung2_0-rescue" part="MCP2562FDT-H_SN-MCP2562FDT-H_SN" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61B7CF9F</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>47u Elko</value>
+      <footprint>Capacitor_SMD:CP_Elec_5x5.4</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61B92D0C</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61B97D58</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BA9702</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>47u Elko</value>
+      <footprint>Capacitor_SMD:CP_Elec_5x5.4</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BB2B4A</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BBDC7B</tstamp>
+    </comp>
+    <comp ref="Y1">
+      <value>8 MHz</value>
+      <footprint>Crystal:Crystal_HC49-4H_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="Crystal" description="Two pin crystal"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BCF54E</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>22p</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BD2404</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>22p</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BD3A45</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>1M</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BD90B5</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>470</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C0BFFE</tstamp>
+    </comp>
+    <comp ref="J8">
+      <value>Conn_01x05</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C13969</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CAEF09</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CB0689</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CB2118</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CB3ADF</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CBD7CB</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CBD7D1</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CCA97D</tstamp>
+    </comp>
+    <comp ref="D8">
+      <value>D</value>
+      <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61CCA983</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D1B74F</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D33655</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>470u Elko</value>
+      <footprint>Capacitor_SMD:CP_Elec_10x10.5</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D38D6B</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>500m</value>
+      <footprint>Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D70525</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>500m</value>
+      <footprint>Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D72ED2</tstamp>
+    </comp>
+    <comp ref="RV10k1">
+      <value>R_POT</value>
+      <footprint>Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_POT" description="Potentiometer"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D9A584</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61D9C39F</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>22k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61DB0459</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>3,3n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61DB4EF1</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x02</value>
+      <footprint>Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61EEA7B5</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x02</value>
+      <footprint>Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61EECFE0</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61F217BC</tstamp>
+    </comp>
+    <comp ref="J6">
+      <value>GND</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>620AB3C9</tstamp>
+    </comp>
+    <comp ref="J5">
+      <value>GND</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>620B58A3</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61C2AF75</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>62558F85</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x02</value>
+      <footprint>TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>625B5056</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>10u Elko</value>
+      <footprint>Capacitor_SMD:CP_Elec_4x4.5</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61B6D58B</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>22u Elko</value>
+      <footprint>Capacitor_SMD:CP_Elec_4x4.5</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61BBA0BC</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>VXO 7803-500</value>
+      <footprint>Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT</footprint>
+      <datasheet>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="L7805" description="Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6259DD1C</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6269EA43</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_DIP_x02</value>
+      <footprint>Button_Switch_THT:SW_DIP_SPSTx02_Piano_10.8x6.64mm_W7.62mm_P2.54mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Switch" part="SW_DIP_x02" description="2x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6283B4DD</tstamp>
+    </comp>
+    <comp ref="J9">
+      <value>Conn_01x04</value>
+      <footprint>TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-4-5.08_1x04_P5.08mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>624721C8</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x02</value>
+      <footprint>TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6251B3D5</tstamp>
+    </comp>
+    <comp ref="IC3">
+      <value>L298P</value>
+      <footprint>L298:SOIC127P1420X360-21N</footprint>
+      <datasheet>https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-32/DSA-634400.pdf</datasheet>
+      <fields>
+        <field name="Description">L298P, Full Bridge Motor Driver, 3A Dual Full Bridge Motor Driver,, 25W 4.8  46 V, 20-Pin Power SO</field>
+        <field name="Height">3.6</field>
+        <field name="Manufacturer_Name">STMicroelectronics</field>
+        <field name="Manufacturer_Part_Number">L298P</field>
+        <field name="Mouser Part Number">511-L298P</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/STMicroelectronics/L298P?qs=lDh9v96ogBZNJERYYNX11w%3D%3D</field>
+      </fields>
+      <libsource lib="L298" part="L298P" description="L298P, Full Bridge Motor Driver, 3A Dual Full Bridge Motor Driver,, 25W 4.8  46 V, 20-Pin Power SO"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6258CC3B</tstamp>
+    </comp>
+    <comp ref="IC4">
+      <value>L297D</value>
+      <footprint>L297:SOIC127P1032X265-20N</footprint>
+      <datasheet>https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-31/DSA-603281.pdf</datasheet>
+      <fields>
+        <field name="Description">L297D, Stepper Motor Controller, 4.75 to 7V, 20-Pin SOIC</field>
+        <field name="Height">2.65</field>
+        <field name="Manufacturer_Name">STMicroelectronics</field>
+        <field name="Manufacturer_Part_Number">L297D</field>
+        <field name="Mouser Part Number">511-L297D</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/STMicroelectronics/L297D?qs=VlfnZmpfJLd7ZP%2FPiQvbYQ%3D%3D</field>
+      </fields>
+      <libsource lib="L297" part="L297D" description="L297D, Stepper Motor Controller, 4.75 to 7V, 20-Pin SOIC"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6258ED9C</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>M3</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>627ED27C</tstamp>
+    </comp>
+    <comp ref="H3">
+      <value>M3</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>627ED873</tstamp>
+    </comp>
+    <comp ref="H2">
+      <value>M3</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>627EDAFE</tstamp>
+    </comp>
+    <comp ref="H4">
+      <value>M3</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>627EDD48</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector_Generic" part="Conn_01x01">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x04">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x05">
+      <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="CP">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Crystal">
+      <description>Two pin crystal</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D">
+      <description>Diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_POT">
+      <description>Potentiometer</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Potentiometer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">R_POT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="L297" part="L297D">
+      <description>L297D, Stepper Motor Controller, 4.75 to 7V, 20-Pin SOIC</description>
+      <docs>https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-31/DSA-603281.pdf</docs>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">L297D</field>
+        <field name="Footprint">SOIC127P1032X265-20N</field>
+        <field name="Datasheet">https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-31/DSA-603281.pdf</field>
+        <field name="Description">L297D, Stepper Motor Controller, 4.75 to 7V, 20-Pin SOIC</field>
+        <field name="Height">2.65</field>
+        <field name="Mouser Part Number">511-L297D</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/STMicroelectronics/L297D?qs=VlfnZmpfJLd7ZP%2FPiQvbYQ%3D%3D</field>
+        <field name="Manufacturer_Name">STMicroelectronics</field>
+        <field name="Manufacturer_Part_Number">L297D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SYNC" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="HOME" type="passive"/>
+        <pin num="4" name="A" type="passive"/>
+        <pin num="5" name="~INH1" type="passive"/>
+        <pin num="6" name="B" type="passive"/>
+        <pin num="7" name="C" type="passive"/>
+        <pin num="8" name="~INH2" type="passive"/>
+        <pin num="9" name="D" type="passive"/>
+        <pin num="10" name="ENABLE" type="passive"/>
+        <pin num="11" name="CONTROL" type="passive"/>
+        <pin num="12" name="VS" type="passive"/>
+        <pin num="13" name="SENS2" type="passive"/>
+        <pin num="14" name="SENS1" type="passive"/>
+        <pin num="15" name="VREF" type="passive"/>
+        <pin num="16" name="OSC" type="passive"/>
+        <pin num="17" name="CW/~CCW" type="passive"/>
+        <pin num="18" name="~CLOCK" type="passive"/>
+        <pin num="19" name="HALF/~FULL" type="passive"/>
+        <pin num="20" name="~RESET" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="L298" part="L298P">
+      <description>L298P, Full Bridge Motor Driver, 3A Dual Full Bridge Motor Driver,, 25W 4.8  46 V, 20-Pin Power SO</description>
+      <docs>https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-32/DSA-634400.pdf</docs>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">L298P</field>
+        <field name="Footprint">SOIC127P1420X360-21N</field>
+        <field name="Datasheet">https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-32/DSA-634400.pdf</field>
+        <field name="Description">L298P, Full Bridge Motor Driver, 3A Dual Full Bridge Motor Driver,, 25W 4.8  46 V, 20-Pin Power SO</field>
+        <field name="Height">3.6</field>
+        <field name="Mouser Part Number">511-L298P</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/STMicroelectronics/L298P?qs=lDh9v96ogBZNJERYYNX11w%3D%3D</field>
+        <field name="Manufacturer_Name">STMicroelectronics</field>
+        <field name="Manufacturer_Part_Number">L298P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_1" type="passive"/>
+        <pin num="2" name="SENSE_A" type="passive"/>
+        <pin num="3" name="N.C._1" type="passive"/>
+        <pin num="4" name="OUT_1" type="passive"/>
+        <pin num="5" name="OUT_2" type="passive"/>
+        <pin num="6" name="VS" type="passive"/>
+        <pin num="7" name="INPUT_1" type="passive"/>
+        <pin num="8" name="ENABLE_A" type="passive"/>
+        <pin num="9" name="INPUT_2" type="passive"/>
+        <pin num="10" name="GND_2" type="passive"/>
+        <pin num="11" name="GND_3" type="passive"/>
+        <pin num="12" name="VSS" type="passive"/>
+        <pin num="13" name="INPUT_3" type="passive"/>
+        <pin num="14" name="ENABLE_B" type="passive"/>
+        <pin num="15" name="INPUT_4" type="passive"/>
+        <pin num="16" name="OUT_3" type="passive"/>
+        <pin num="17" name="OUT_4" type="passive"/>
+        <pin num="18" name="N.C._2" type="passive"/>
+        <pin num="19" name="SENSE_B" type="passive"/>
+        <pin num="20" name="GND_4" type="passive"/>
+        <pin num="21" name="EP" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+      </fields>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="L7805">
+      <aliases>
+        <alias>L7806</alias>
+        <alias>L7808</alias>
+        <alias>L7885</alias>
+        <alias>L7809</alias>
+        <alias>L7812</alias>
+        <alias>L7815</alias>
+        <alias>L7818</alias>
+        <alias>L7824</alias>
+      </aliases>
+      <description>Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252</description>
+      <docs>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</docs>
+      <footprints>
+        <fp>TO?252*</fp>
+        <fp>TO?263*</fp>
+        <fp>TO?220*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">L7805</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="OUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Schrittmotoransteuerung2_0-rescue" part="DSPIC33EP512GP502-I_SP-DSPIC33EP512GP502-I_SP">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">DSPIC33EP512GP502-I_SP-DSPIC33EP512GP502-I_SP</field>
+        <field name="Footprint">DIP794W56P254L3486H508Q28N</field>
+        <field name="Datasheet">https://componentsearchengine.com/Datasheets/1/dsPIC33EP512GP502-I_SP.pdf</field>
+        <field name="Description">Microchip DSPIC33EP512GP502-I/SP, 16bit dsPIC Microcontroller, 5.5MHz, 512 kB Flash, 28-Pin PDIP</field>
+        <field name="Height">5.08</field>
+        <field name="Mouser Part Number">579-33EP512GP502ISP</field>
+        <field name="Mouser Price/Stock">https://www.mouser.com/Search/Refine.aspx?Keyword=579-33EP512GP502ISP</field>
+        <field name="Manufacturer_Name">Microchip</field>
+        <field name="Manufacturer_Part_Number">DSPIC33EP512GP502-I/SP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~MCLR" type="passive"/>
+        <pin num="2" name="AN0/OA2OUT/RA0" type="passive"/>
+        <pin num="3" name="AN1/C2IN1+/RA1" type="passive"/>
+        <pin num="4" name="PGED3/VREF-/AN2/C2IN1-/~SS1~/RPI32/CTED2/RB0" type="passive"/>
+        <pin num="5" name="PGEC3/VREF+/AN3/OA1OUT/RPI33/CTED1/RB1" type="passive"/>
+        <pin num="6" name="PGEC1/AN4/C1IN1+/RPI34/RB2" type="passive"/>
+        <pin num="7" name="PGED1/AN5/C1IN1-/RP35/RB3" type="passive"/>
+        <pin num="8" name="VSS_1" type="passive"/>
+        <pin num="9" name="OSC1/CLKI/RA2" type="passive"/>
+        <pin num="10" name="OSC2/CLKO/RA3" type="passive"/>
+        <pin num="11" name="RP36/RB4" type="passive"/>
+        <pin num="12" name="CVREF2O/RP20/T1CK/RA4" type="passive"/>
+        <pin num="13" name="VDD" type="passive"/>
+        <pin num="14" name="PGED2/ASDA2/RP37/RB5" type="passive"/>
+        <pin num="15" name="PGEC2/ASCL2/RP38/RB6" type="passive"/>
+        <pin num="16" name="SCK1/RP39/INT0/RB7" type="passive"/>
+        <pin num="17" name="TCK/CVREF1O/ASCL1/SDO1/RP40/T4CK/RB8" type="passive"/>
+        <pin num="18" name="TMS/ASDA1/SDI1/RP41/RB9(3)" type="passive"/>
+        <pin num="19" name="VSS_2" type="passive"/>
+        <pin num="20" name="VCAP" type="passive"/>
+        <pin num="21" name="TDO/RP42/RB10" type="passive"/>
+        <pin num="22" name="TDI/RP43/RB11" type="passive"/>
+        <pin num="23" name="RPI44/RB12" type="passive"/>
+        <pin num="24" name="RPI45/CTPLS/RB13" type="passive"/>
+        <pin num="25" name="RPI46/T3CK/RB14" type="passive"/>
+        <pin num="26" name="RPI47/T5CK/RB15" type="passive"/>
+        <pin num="27" name="AVSS" type="passive"/>
+        <pin num="28" name="AVDD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Schrittmotoransteuerung2_0-rescue" part="MCP2562FDT-H_SN-MCP2562FDT-H_SN">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">MCP2562FDT-H_SN-MCP2562FDT-H_SN</field>
+        <field name="Footprint">SOIC127P600X175-8N</field>
+        <field name="Datasheet">http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en568915</field>
+        <field name="Description">CAN Interface IC CAN Flexible Data Rate Transceiver</field>
+        <field name="Height">1.75</field>
+        <field name="Mouser Part Number">579-MCP2562FDT-H/SN</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP2562FDT-H-SN?qs=YlpJWyuQ3PMXmsmdO4TKrg%3D%3D</field>
+        <field name="Manufacturer_Name">Microchip</field>
+        <field name="Manufacturer_Part_Number">MCP2562FDT-H/SN</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TXD" type="passive"/>
+        <pin num="2" name="VSS" type="passive"/>
+        <pin num="3" name="VDD" type="passive"/>
+        <pin num="4" name="RXD" type="passive"/>
+        <pin num="5" name="VIO" type="passive"/>
+        <pin num="6" name="CANL" type="passive"/>
+        <pin num="7" name="CANH" type="passive"/>
+        <pin num="8" name="STBY" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_DIP_x02">
+      <description>2x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SW?DIP?x2*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_DIP_x02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+        <pin num="4" name="~" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="L297">
+      <uri>C:/Users/User/Desktop/Schrittmotoransteuerung2_0/L297/L297D.lib</uri>
+    </library>
+    <library logical="L298">
+      <uri>C:/Users/User/Desktop/Schrittmotoransteuerung2_0/L298/L298P.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Mechanical.lib</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Regulator_Linear.lib</uri>
+    </library>
+    <library logical="Schrittmotoransteuerung2_0-rescue">
+      <uri>C:\Users\User\Desktop\Schrittmotoransteuerung2_0/Schrittmotoransteuerung2_0-rescue.lib</uri>
+    </library>
+    <library logical="Switch">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Switch.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/OUT_C">
+      <node ref="IC3" pin="16"/>
+      <node ref="J9" pin="3"/>
+      <node ref="D3" pin="2"/>
+      <node ref="D7" pin="1"/>
+    </net>
+    <net code="2" name="/INHB">
+      <node ref="IC3" pin="14"/>
+      <node ref="IC4" pin="18"/>
+    </net>
+    <net code="3" name="/INHA">
+      <node ref="IC3" pin="8"/>
+      <node ref="IC4" pin="15"/>
+    </net>
+    <net code="4" name="GND">
+      <node ref="IC2" pin="27"/>
+      <node ref="C12" pin="1"/>
+      <node ref="D8" pin="2"/>
+      <node ref="D7" pin="2"/>
+      <node ref="D6" pin="2"/>
+      <node ref="D5" pin="2"/>
+      <node ref="RV10k1" pin="3"/>
+      <node ref="IC4" pin="12"/>
+      <node ref="R4" pin="1"/>
+      <node ref="C13" pin="2"/>
+      <node ref="IC2" pin="19"/>
+      <node ref="IC1" pin="8"/>
+      <node ref="IC3" pin="1"/>
+      <node ref="IC1" pin="2"/>
+      <node ref="IC2" pin="8"/>
+      <node ref="C16" pin="2"/>
+      <node ref="C15" pin="1"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="J8" pin="3"/>
+      <node ref="J6" pin="1"/>
+      <node ref="IC3" pin="11"/>
+      <node ref="IC3" pin="10"/>
+      <node ref="IC3" pin="21"/>
+      <node ref="IC3" pin="20"/>
+      <node ref="C14" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="J5" pin="1"/>
+      <node ref="IC4" pin="1"/>
+      <node ref="U1" pin="2"/>
+      <node ref="J4" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="J2" pin="2"/>
+      <node ref="C11" pin="2"/>
+      <node ref="C9" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="SW1" pin="1"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C8" pin="2"/>
+    </net>
+    <net code="5" name="+5V">
+      <node ref="J4" pin="1"/>
+      <node ref="R5" pin="2"/>
+      <node ref="C4" pin="1"/>
+      <node ref="J2" pin="1"/>
+      <node ref="C2" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="C15" pin="2"/>
+      <node ref="IC1" pin="3"/>
+      <node ref="R7" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="D2" pin="1"/>
+      <node ref="D1" pin="1"/>
+      <node ref="D4" pin="1"/>
+      <node ref="C13" pin="1"/>
+      <node ref="C14" pin="1"/>
+      <node ref="D3" pin="1"/>
+      <node ref="IC4" pin="2"/>
+      <node ref="IC3" pin="6"/>
+      <node ref="IC3" pin="12"/>
+    </net>
+    <net code="6" name="/OUT_A">
+      <node ref="J9" pin="1"/>
+      <node ref="D1" pin="2"/>
+      <node ref="D5" pin="1"/>
+      <node ref="IC3" pin="4"/>
+    </net>
+    <net code="7" name="/OUT_B">
+      <node ref="D2" pin="2"/>
+      <node ref="D6" pin="1"/>
+      <node ref="J9" pin="2"/>
+      <node ref="IC3" pin="5"/>
+    </net>
+    <net code="8" name="/OUT_D">
+      <node ref="D4" pin="2"/>
+      <node ref="D8" pin="1"/>
+      <node ref="J9" pin="4"/>
+      <node ref="IC3" pin="17"/>
+    </net>
+    <net code="9" name="/C">
+      <node ref="IC4" pin="17"/>
+      <node ref="IC3" pin="13"/>
+    </net>
+    <net code="10" name="/D">
+      <node ref="IC4" pin="19"/>
+      <node ref="IC3" pin="15"/>
+    </net>
+    <net code="11" name="/B">
+      <node ref="IC4" pin="16"/>
+      <node ref="IC3" pin="9"/>
+    </net>
+    <net code="12" name="/A">
+      <node ref="IC3" pin="7"/>
+      <node ref="IC4" pin="14"/>
+    </net>
+    <net code="13" name="Net-(IC4-Pad10)">
+      <node ref="IC4" pin="10"/>
+    </net>
+    <net code="14" name="Net-(IC2-Pad25)">
+      <node ref="IC2" pin="25"/>
+      <node ref="SW1" pin="4"/>
+    </net>
+    <net code="15" name="Net-(IC2-Pad26)">
+      <node ref="SW1" pin="3"/>
+      <node ref="IC2" pin="26"/>
+    </net>
+    <net code="16" name="/297_CW_CCW">
+      <node ref="IC2" pin="24"/>
+      <node ref="IC4" pin="7"/>
+    </net>
+    <net code="17" name="/MCLR">
+      <node ref="R2" pin="1"/>
+      <node ref="R3" pin="1"/>
+      <node ref="IC2" pin="1"/>
+    </net>
+    <net code="18" name="/297_Enable">
+      <node ref="IC2" pin="21"/>
+      <node ref="IC4" pin="20"/>
+    </net>
+    <net code="19" name="/297_HALF_FULL">
+      <node ref="IC2" pin="22"/>
+      <node ref="IC4" pin="9"/>
+    </net>
+    <net code="20" name="/297_CLOCK">
+      <node ref="IC4" pin="8"/>
+      <node ref="IC2" pin="23"/>
+    </net>
+    <net code="21" name="Net-(C16-Pad1)">
+      <node ref="C16" pin="1"/>
+      <node ref="IC4" pin="6"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="22" name="Net-(IC2-Pad18)">
+      <node ref="IC2" pin="18"/>
+    </net>
+    <net code="23" name="Net-(IC2-Pad17)">
+      <node ref="IC2" pin="17"/>
+    </net>
+    <net code="24" name="Net-(R5-Pad1)">
+      <node ref="R5" pin="1"/>
+      <node ref="RV10k1" pin="1"/>
+    </net>
+    <net code="25" name="Net-(IC4-Pad5)">
+      <node ref="IC4" pin="5"/>
+      <node ref="RV10k1" pin="2"/>
+    </net>
+    <net code="26" name="Net-(IC4-Pad13)">
+      <node ref="IC4" pin="13"/>
+    </net>
+    <net code="27" name="Net-(IC3-Pad18)">
+      <node ref="IC3" pin="18"/>
+    </net>
+    <net code="28" name="Net-(IC4-Pad11)">
+      <node ref="IC4" pin="11"/>
+    </net>
+    <net code="29" name="/SenseB">
+      <node ref="IC3" pin="19"/>
+      <node ref="R6" pin="1"/>
+      <node ref="IC4" pin="3"/>
+    </net>
+    <net code="30" name="Net-(IC2-Pad16)">
+      <node ref="IC2" pin="16"/>
+    </net>
+    <net code="31" name="Net-(IC2-Pad15)">
+      <node ref="IC2" pin="15"/>
+    </net>
+    <net code="32" name="/SenseA">
+      <node ref="IC4" pin="4"/>
+      <node ref="R4" pin="2"/>
+      <node ref="IC3" pin="2"/>
+    </net>
+    <net code="33" name="Net-(IC3-Pad3)">
+      <node ref="IC3" pin="3"/>
+    </net>
+    <net code="34" name="Net-(IC1-Pad7)">
+      <node ref="J3" pin="1"/>
+      <node ref="IC1" pin="7"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="35" name="Net-(IC1-Pad6)">
+      <node ref="J3" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="IC1" pin="6"/>
+    </net>
+    <net code="36" name="/PGC">
+      <node ref="IC2" pin="5"/>
+      <node ref="J8" pin="5"/>
+    </net>
+    <net code="37" name="Net-(J8-Pad1)">
+      <node ref="R3" pin="2"/>
+      <node ref="J8" pin="1"/>
+    </net>
+    <net code="38" name="Net-(C7-Pad1)">
+      <node ref="C7" pin="1"/>
+      <node ref="R1" pin="1"/>
+      <node ref="Y1" pin="2"/>
+      <node ref="IC2" pin="10"/>
+    </net>
+    <net code="39" name="Net-(C6-Pad1)">
+      <node ref="Y1" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="IC2" pin="9"/>
+    </net>
+    <net code="40" name="Net-(IC2-Pad3)">
+      <node ref="IC2" pin="3"/>
+    </net>
+    <net code="41" name="Net-(IC2-Pad6)">
+      <node ref="IC2" pin="6"/>
+    </net>
+    <net code="42" name="Net-(IC2-Pad7)">
+      <node ref="IC2" pin="7"/>
+    </net>
+    <net code="43" name="Net-(IC2-Pad12)">
+      <node ref="IC2" pin="12"/>
+    </net>
+    <net code="44" name="Net-(C8-Pad1)">
+      <node ref="C9" pin="1"/>
+      <node ref="C8" pin="1"/>
+      <node ref="IC2" pin="20"/>
+    </net>
+    <net code="45" name="Net-(IC2-Pad2)">
+      <node ref="IC2" pin="2"/>
+    </net>
+    <net code="46" name="+3V3">
+      <node ref="IC2" pin="28"/>
+      <node ref="C3" pin="1"/>
+      <node ref="J8" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="C11" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="U1" pin="3"/>
+      <node ref="C5" pin="1"/>
+      <node ref="C10" pin="1"/>
+      <node ref="IC1" pin="5"/>
+      <node ref="IC2" pin="13"/>
+    </net>
+    <net code="47" name="/TXD">
+      <node ref="IC1" pin="1"/>
+      <node ref="IC2" pin="14"/>
+    </net>
+    <net code="48" name="/RXD">
+      <node ref="IC1" pin="4"/>
+      <node ref="IC2" pin="11"/>
+    </net>
+    <net code="49" name="/PGD">
+      <node ref="J8" pin="4"/>
+      <node ref="IC2" pin="4"/>
+    </net>
+  </nets>
+</export>

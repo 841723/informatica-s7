@@ -12,27 +12,30 @@
             "RelativeFilename": "bg.png"
           },
           {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 19,
-            "Y": 52,
-            "Width": 75,
-            "Height": 75,
-            "Filename": "image00.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "scalableImage2",
-            "X": 19,
-            "Y": 146,
-            "Width": 75,
-            "Height": 75,
-            "Filename": "image00.png",
-            "ScalingAlgorithm": "Bilinear Interpolation"
+            "Type": "Button",
+            "Name": "button1",
+            "X": 120,
+            "Y": 111,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleClickButton1"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],

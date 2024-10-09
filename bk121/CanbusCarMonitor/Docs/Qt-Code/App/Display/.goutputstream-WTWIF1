@@ -1,0 +1,35 @@
+#ifndef SENDER_H
+#define SENDER_H
+
+/* Libraries */
+#include <QApplication>
+#include <QLabel>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QMainWindow>
+#include <QSlider>
+#include "sender.h"
+
+/* Class */
+
+class sender;
+class myWindow : public QMainWindow
+{
+    Q_OBJECT
+	public:
+		QPushButton *btn ;
+		QSlider *sld;
+		QWidget * wdg;
+		QVBoxLayout *vlay;
+		sender *mySender;
+		myWindow();
+		void send();
+	
+	public slots:
+		void OnSliderMoved(int i);
+		void OnClick();
+	
+	private:
+};
+
+

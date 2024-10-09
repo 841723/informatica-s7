@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP L298P
+D L298P, Full Bridge Motor Driver, 3A Dual Full Bridge Motor Driver,, 25W 4.8  46 V, 20-Pin Power SO
+K
+F https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-32/DSA-634400.pdf
+$ENDCMP
+#
+#End Doc Library

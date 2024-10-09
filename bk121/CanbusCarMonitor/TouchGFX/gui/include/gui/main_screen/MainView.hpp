@@ -13,17 +13,12 @@ public:
     virtual ~MainView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-
-    void animationEndedHandler(const ZoomAnimationImage& image);
+    void handleClickButton1();
 
 protected:
 
 private:
-    ZoomAnimationImage zoomAnimationImage;
 
-    int currentAnimation;
-
-    Callback<MainView, const ZoomAnimationImage&> animationEndedCallback;
 };
 
 #endif // MAIN_VIEW_HPP

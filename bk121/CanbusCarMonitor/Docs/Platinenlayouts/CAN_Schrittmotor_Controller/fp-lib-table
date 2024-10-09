@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name L298)(type KiCad)(uri C:/Users/User/Desktop/Schrittmotoransteuerung2_0/L298)(options "")(descr ""))
+  (lib (name L297)(type KiCad)(uri C:/Users/User/Desktop/Schrittmotoransteuerung2_0/L297)(options "")(descr ""))
+)

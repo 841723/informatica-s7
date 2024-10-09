@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP L297D
+D L297D, Stepper Motor Controller, 4.75 to 7V, 20-Pin SOIC
+K
+F https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-31/DSA-603281.pdf
+$ENDCMP
+#
+#End Doc Library
