@@ -38,6 +38,7 @@
                 iface enp0s8 inet static
                     address 192.168.22.22
                     network 192.168.22.0
+                    dns-nameservers 192.168.22.1    // new
                     netmask 255.255.255.0
                 ```
 
