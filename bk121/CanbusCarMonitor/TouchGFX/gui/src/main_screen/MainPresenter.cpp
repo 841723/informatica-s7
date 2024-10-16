@@ -13,3 +13,8 @@ void MainPresenter::activate()
 void MainPresenter::deactivate()
 {
 }
+
+void MainPresenter::setNewValue(uint8_t* newValue)
+{
+    view.updateValue(newValue);
+}

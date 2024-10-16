@@ -27,6 +27,8 @@ public:
     {
         model = m;
     }
+
+    virtual void setNewValue(uint8_t* newValue){}
 protected:
     Model* model;
 };

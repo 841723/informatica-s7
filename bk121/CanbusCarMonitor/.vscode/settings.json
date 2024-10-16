@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.jj": "java",
+        "messages_types.h": "cpp",
+        "xlocnum": "cpp",
+        "iterator": "cpp",
+        "xutility": "cpp"
+    }
+}

@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
 {
@@ -37,6 +38,13 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image backgroundImage;
     touchgfx::Button button1;
+    touchgfx::TextAreaWithOneWildcard text;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textBuffer[TEXT_SIZE];
 
 private:
 

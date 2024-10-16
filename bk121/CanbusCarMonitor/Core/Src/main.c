@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stm32746g_discovery_qspi.h>
+#include <messages_types.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -80,6 +81,13 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for SecondTask */
+osThreadId_t SecondTaskHandle;
+const osThreadAttr_t SecondTask_attributes = {
+  .name = "SecondTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for TouchGFXTask */
 osThreadId_t TouchGFXTaskHandle;
 const osThreadAttr_t TouchGFXTask_attributes = {
@@ -119,6 +127,125 @@ extern void videoTaskFunc(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+CAN_RxHeaderTypeDef RxHeader;
+uint8_t RxData[8];
+uint32_t rpm = 0;
+uint32_t map = 0;
+uint32_t iat = 0;
+uint32_t tps = 0;
+uint32_t vehicle_spd = 0;
+uint32_t oil_tmp = 0;
+float oil_press = 0;
+uint32_t clt = 0;
+float lambda = 0;
+uint32_t egt = 0;
+float batt_v = 0;
+float lambda_targ = 0;
+
+extern xQueueHandle messageQ;
+
+
+/**
+  * @brief  Rx Fifo 0 message pending callback
+  * @param  hcan: pointer to a CAN_HandleTypeDef structure that contains
+  *         the configuration information for the specified CAN.
+  * @retval None
+  */
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+  /* Get RX message */
+  if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+  {
+    /* Reception Error */
+    Error_Handler();
+  }
+
+  /* Package 1 */
+  if ((RxHeader.StdId == 0x600) && (RxHeader.IDE == CAN_ID_STD) && (RxHeader.DLC == 8))
+  {
+	 uint16_t rpm_in = (RxData[0] << 0) | (RxData[1] << 8);
+	 uint8_t tps_in = RxData[2];
+	 uint8_t iat_in = RxData[3];
+	 uint16_t map_in = (RxData[4] << 0) | (RxData[7] << 8);
+
+	 rpm = (int)rpm_in;
+	 map = ((int)map_in*1.0f);
+	 iat = (int)iat_in;
+	 tps = (int)(((float)tps_in)*0.5f);
+	 (void)map;
+	 (void)iat;
+  }
+
+  /* Package 2 */
+  if ((RxHeader.StdId == 0x602) && (RxHeader.IDE == CAN_ID_STD) && (RxHeader.DLC == 8))
+  {
+
+	 uint16_t vehicle_spd_in = (RxData[1] << 0) | (RxData[2] << 8);
+	 uint8_t oil_tmp_in = RxData[3];
+	 uint8_t oil_press_in = RxData[4];
+	 uint8_t fuel_press_in = RxData[5];
+	 uint16_t clt_in = (RxData[6] << 0) | (RxData[7] << 8);
+
+	 vehicle_spd = ((int)vehicle_spd_in)*1;
+	 oil_tmp = ((int)oil_tmp_in) * 1;
+	 oil_press = ((int)oil_press_in) * 0.0625f;
+	 clt = ((int)clt_in) * 1;
+  }
+
+  /* Package 3 */
+  if ((RxHeader.StdId == 0x603) && (RxHeader.IDE == CAN_ID_STD) && (RxHeader.DLC == 8))
+  {
+	 uint8_t lambda_in = RxData[2];
+	 uint16_t egt_1_in = (RxData[4] << 0) | (RxData[5] << 8);
+	 lambda = ((float)lambda_in)*0.0078125f;
+	 egt = (int)egt_1_in;
+  }
+
+  /* Package 4 */
+  if ((RxHeader.StdId == 0x604) && (RxHeader.IDE == CAN_ID_STD) && (RxHeader.DLC == 8))
+  {
+	 uint16_t batt_in = (RxData[2] << 0) | (RxData[3] << 8);
+	 float battery_voltage = ((float)batt_in)*0.027f;
+	 batt_v = battery_voltage;
+	 (void)batt_v;
+  }
+
+  /* Package 5 */
+  if ((RxHeader.StdId == 0x500) && (RxHeader.IDE == CAN_ID_STD) && (RxHeader.DLC == 8))
+    {
+  	 uint16_t lambda_targ_in = RxData[7];
+  	 lambda_targ = lambda_targ_in / 100.0f;
+    }
+}
+
+void SecondTask(void const* argument)
+{
+	osDelay(150);
+
+	static const int demo_mode = 1;
+	for(;;)
+	{
+		if(demo_mode)
+		{
+			rpm = (rpm >= 8000) ? 0: rpm + 100;
+			clt = (clt >= 250) ? -40: clt + 3;
+			map = (map >= 450) ? 1: map + 6;
+			lambda = (lambda >= 1.4) ? 0.6: lambda + 0.05;
+			lambda_targ = (lambda_targ >= 1.4) ? 0.65: lambda_targ + 0.06;
+			vehicle_spd = (vehicle_spd >= 400) ? 0: vehicle_spd + 6;
+			oil_tmp = (oil_tmp >= 160) ? 1: oil_tmp + 2;
+			oil_press = (oil_press >= 12.0) ? 0.1: oil_press + 0.1;
+			iat = (iat >= 100) ? 1: iat + 2;
+			egt = (egt >= 760) ? 500: egt +12;
+			tps = (tps >= 100) ? 0: tps + 4;
+			batt_v = (batt_v >= 20.0) ? 10.0: batt_v + 0.6;
+		}
+
+		display_values dispVals = {rpm, clt, map, lambda, lambda_targ, vehicle_spd, oil_tmp, oil_press, iat, egt, tps, batt_v};
+    xQueueSend(messageQ, &dispVals,0);
+		osDelay(50);
+	}
+}
 
 /* USER CODE END 0 */
 
@@ -199,6 +326,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of secondTaskHandle */
+  secondTaskHandle = osThreadNew(SecondTask, NULL, &secondTask_attributes);
 
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);

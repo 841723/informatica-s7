@@ -2,8 +2,7 @@
 #include <BitmapDatabase.hpp>
 #include <touchgfx/EasingEquations.hpp>
 
-MainView::MainView() :
-    currentAnimation(0),
+MainView::MainView()
 {
 }
 
@@ -17,6 +16,9 @@ void MainView::tearDownScreen()
 }
 
 
-void MainView::handleClickButton1() {
-    
+void MainView::updateValue(uint8_t* newValue)
+{
+    count++;
+    Unicode::snprintf(textBuffer, TEXT_SIZE, "%d", count);
+    text.invalidate();
 }

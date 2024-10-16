@@ -4,6 +4,7 @@
 #include <gui_generated/main_screen/MainViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 MainViewBase::MainViewBase() :
     buttonCallback(this, &MainViewBase::buttonCallbackHandler)
@@ -20,6 +21,15 @@ MainViewBase::MainViewBase() :
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     button1.setAction(buttonCallback);
     add(button1);
+
+    text.setXY(194, 51);
+    text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text.setLinespacing(0);
+    Unicode::snprintf(textBuffer, TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_TJ5B).getText());
+    text.setWildcard(textBuffer);
+    text.resizeToCurrentText();
+    text.setTypedText(touchgfx::TypedText(T_TEXT));
+    add(text);
 }
 
 MainViewBase::~MainViewBase()

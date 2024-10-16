@@ -21,9 +21,9 @@ $(error Spaces not allowed in path)
 else
 
 ADDITIONAL_SOURCES := 
-ADDITIONAL_INCLUDE_PATHS := 
+ADDITIONAL_INCLUDE_PATHS := "Core/Inc"
 ADDITIONAL_LIBRARY_PATHS := 
-ADDITIONAL_LIBRARIES :=
+ADDITIONAL_LIBRARIES := 
 export ADDITIONAL_SOURCES ADDITIONAL_INCLUDE_PATHS ADDITIONAL_LIBRARY_PATHS ADDITIONAL_LIBRARIES
 
 all: $(filter assets,$(MAKECMDGOALS))
@@ -31,4 +31,3 @@ all assets: $(filter clean,$(MAKECMDGOALS))
 all clean assets:
 	@$(MAKE) -r -f generated/simulator/gcc/Makefile -s $(MFLAGS) $@ -C "$(application_path)"
 endif
-

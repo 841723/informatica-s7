@@ -13,12 +13,12 @@ public:
     virtual ~MainView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void handleClickButton1();
 
+    void updateValue(uint8_t* newValue);
 protected:
 
 private:
-
+    uint8_t count;
 };
 
 #endif // MAIN_VIEW_HPP

@@ -27,6 +27,9 @@ public:
 
     virtual ~MainPresenter() {};
 
+
+    void setNewValue(uint8_t* newValue);
+
 private:
     MainPresenter();
 
