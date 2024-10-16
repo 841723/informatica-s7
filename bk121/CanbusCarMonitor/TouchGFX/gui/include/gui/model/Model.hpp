@@ -44,6 +44,10 @@ protected:
      * Pointer to the currently active presenter.
      */
     ModelListener* modelListener;
+
+private:
+    // xQueueHandle xQueueGenericCreatePtrDIEGO(UBaseType_t uxQueueLength, UBaseType_t uxItemSize, uint8_t ucQueueType);
+    // BaseType_t xQueueReceivekPtrDIEGO(xQueueHandle xQueue, void * const pvBuffer, TickType_t xTicksToWait);
 };
 
 #endif /* MODEL_HPP */

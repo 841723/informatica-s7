@@ -20,8 +20,12 @@ all clean assets:
 $(error Spaces not allowed in path)
 else
 
-ADDITIONAL_SOURCES := 
-ADDITIONAL_INCLUDE_PATHS := "Core/Inc"
+# Example section for include paths
+inc := Core/Inc \
+    Middlewares/Third_Party/FreeRTOS/Source/include
+
+ADDITIONAL_SOURCES := $(src)
+ADDITIONAL_INCLUDE_PATHS := $(inc)
 ADDITIONAL_LIBRARY_PATHS := 
 ADDITIONAL_LIBRARIES := 
 export ADDITIONAL_SOURCES ADDITIONAL_INCLUDE_PATHS ADDITIONAL_LIBRARY_PATHS ADDITIONAL_LIBRARIES

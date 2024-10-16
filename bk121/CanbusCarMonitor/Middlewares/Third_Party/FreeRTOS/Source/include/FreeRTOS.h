@@ -53,7 +53,8 @@ extern "C" {
 #endif
 
 /* Application specific configuration options. */
-#include "FreeRTOSConfig.h"
+// #include "FreeRTOSConfig.h"
+#include "C:\Users\diego\Desktop\unizar\informatica-s7\bk121\CanbusCarMonitor\Core\Inc\FreeRTOSConfig.h"
 
 /* Basic FreeRTOS definitions. */
 #include "projdefs.h"

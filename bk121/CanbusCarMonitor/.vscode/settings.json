@@ -4,6 +4,7 @@
         "messages_types.h": "cpp",
         "xlocnum": "cpp",
         "iterator": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "freertosconfig.h": "c"
     }
 }
