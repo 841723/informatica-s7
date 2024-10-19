@@ -364,3 +364,16 @@
 2024-10-16 10:26:36,939 [INFO] WebApp:578 - Web application path used C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\db\plugins\mcufinder\reactClient1\index.html
 2024-10-16 10:26:37,081 [INFO] WebApp:186 - Connection restablished
 2024-10-16 10:26:37,136 [INFO] UserAuth:417 - Internet connection configuration mode: 1
+2024-10-16 12:48:34,341 [INFO] WebApp:189 - Connection lost
+2024-10-16 12:48:44,354 [INFO] WebApp:186 - Connection restablished
+2024-10-16 12:48:47,288 [INFO] WebApp:189 - Connection lost
+2024-10-16 12:48:47,466 [INFO] WebApp:186 - Connection restablished
+2024-10-16 12:48:50,671 [INFO] WebApp:189 - Connection lost
+2024-10-16 12:48:54,351 [INFO] WebApp:186 - Connection restablished
+2024-10-16 12:48:54,723 [INFO] WebApp:189 - Connection lost
+2024-10-16 12:48:54,931 [INFO] WebApp:186 - Connection restablished
+2024-10-16 13:43:39,285 [INFO] WebApp:189 - Connection lost
+2024-10-16 13:43:47,764 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2024-10-16 13:43:47,765 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2024-10-16 13:43:47,766 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2024-10-16 13:43:49,123 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
