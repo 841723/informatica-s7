@@ -15,7 +15,7 @@
             "Type": "Button",
             "Name": "button1",
             "X": 120,
-            "Y": 111,
+            "Y": 170,
             "Width": 240,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",

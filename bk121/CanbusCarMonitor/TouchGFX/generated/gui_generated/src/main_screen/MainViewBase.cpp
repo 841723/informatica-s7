@@ -17,7 +17,7 @@ MainViewBase::MainViewBase() :
     backgroundImage.setBitmap(touchgfx::Bitmap(BITMAP_BG_ID));
     add(backgroundImage);
 
-    button1.setXY(120, 111);
+    button1.setXY(120, 170);
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     button1.setAction(buttonCallback);
     add(button1);

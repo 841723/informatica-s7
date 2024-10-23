@@ -1,0 +1,33 @@
+!SESSION 2024-10-23 09:28:07.571 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-23 09:28:34.894
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-23 09:28:34.906
+!MESSAGE Log4j2 initialized with config file C:\Users\diego\Desktop\unizar\informatica-s7\bk121\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-23 09:28:39.014
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-10-23 09:31:53.094
+!MESSAGE Indexed 'SdImageDisplay' (20 sources, 82 headers) in 3.81 sec: 5,516 declarations; 33,524 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0051%)
+!SESSION 2024-10-23 10:38:58.376 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-23 10:39:41.926
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-23 10:39:41.942
+!MESSAGE Log4j2 initialized with config file C:\Users\diego\Desktop\unizar\informatica-s7\bk121\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-23 10:39:47.210
+!MESSAGE Started RMI Server, listening on port 41337
