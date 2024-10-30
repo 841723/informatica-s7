@@ -349,4 +349,4 @@
         - Configure/HSTS.../Enable
 
 
-https://www.transip.eu/knowledgebase/3352-installing-vpn-server-windows-server-2019#:~:text=Click%20the%20Windows%20Start%20button%20and%20the%20Settings%20icon.&text=Then%20click%20on%20'Network%20%26%20Internet'.&text=Click%20on%20'VPN'%20on%20the,'Add%20a%20VPN%20connection'.&text=Enter%20the%20details%20on%20the,VPN%20connection'%20screen%20that%20appears.
+https://www.transip.eu/knowledgebase/3352-installing-vpn-server-windows-server-2019
