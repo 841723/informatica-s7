@@ -60,47 +60,22 @@
             nameserver 192.168.11.1
             ```
     -   configure PPTP vpn client
-
-        -   create /etc/ppp/peers/pptpserver
+        - install `pptp-linux`
+        -   create /etc/ppp/peers/myvpn
             -   add
                 ```
-                pty "pptp www.nss-fh.com --nolaunchpppd"
+                pty "pptp 192.168.22.22 --nolaunchpppd"
                 name client1
-                password password1
+                password 123
                 remotename PPTP
                 require-mppe-128
-                refuse-eap
-                refuse-pap
-                refuse-chap
-                refuse-mschap
-                require-mschap-v2
                 persist
-                noauth
+                maxfail 50
+                holdoff 2
+                file /etc/ppp/options.pptp
+                ipparam myvpn
                 ```
 
-    -   configure the openvpn client
-
-        -   create `client.ovpn`
-
-            -   add
-                ```
-                client
-                dev tun
-                proto udp
-                remote www.nss-fh.com 1194
-                resolv-retry infinite
-                nobind
-                persist-key
-                persist-tun
-                auth-user-pass
-                tls-auth /etc/openvpn/ta.key 1
-                remote-cert-tls server
-                verb 3
-                ```
-
-        -   run `openvpn --genkey secret /etc/openvpn/ta.key`
-        -   run `sudo openvpn --config client.ovpn`
-    
     -   configure the wireguard client
         - install `wireguard`
         - run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
@@ -247,68 +222,32 @@
         -   configure the VPN server in `/etc/pptpd.conf`:
             -   add
                 ```
-                localip localip 192.168.22.22
-                remoteip 192.168.22.10-20
+                localip 10.10.0.1
+                remoteip 10.10.0.101-200
                 ```
         -   configure the VPN options in `/etc/ppp/pptpd-options`:
-            -   add
+            -   comment out
                 ```
-                noauth
+                refuse-pap
+                refuse-chap
+                refuse-mschap
+
+                ms-dns 10.0.0.1
+                ms-dns 10.0.0.2
                 ```
         -   configure the VPN users in `/etc/ppp/chap-secrets`:
             -   add
                 ```
-                user1 pptpd password1 *
+                client1 pptpd 123 *
+                client1 * 123 *
                 ```
+        - run `ufw allow 1723/tcp`
+        - run `ufw allow 47`
         -   enable IP forwarding in `/etc/sysctl.conf`:
             -   add
                 ```
                 net.ipv4.ip_forward=1
                 ```
-    -   set up the openvpn VPN server
-
-        -   install `openvpn` and `easy-rsa`
-        -   run `make-cadir ~/openvpn-ca`
-        -   run
-            ```
-            ./easyrsa init-pki
-            ./easyrsa build-ca
-            ./easyrsa build-server-full server
-            ./easyrsa gen-dh
-            openvpn --genkey secret ta.key
-            ./easyrsa build-client-full client1
-            ```
-        -   set up `/etc/openvpn/server.conf`
-
-            -   add
-
-                ```
-                port 1194
-                proto udp
-                dev tun
-                ca /etc/openvpn/ca.crt
-                cert /etc/openvpn/server.crt
-                key /etc/openvpn/server.key
-                dh /etc/openvpn/dh.pem
-                tls-auth /etc/openvpn/ta.key 0
-                server 10.8.0.0 255.255.255.0
-                ifconfig-pool-persist ipp.txt
-                push "redirect-gateway def1 bypass-dhcp"
-                push "dhcp-option DNS 8.8.8.8"
-                keepalive 10 120
-                cipher AES-256-CBC
-                persist-key
-                persist-tun
-                status openvpn-status.log
-                verb 3
-
-                plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
-
-                verify-client-cert none
-                username-as-common-name
-                ```
-
-        -   add user `vpnuser:vpn`
 
     - set up the wireguard VPN server
         - install `wireguard`
@@ -330,7 +269,6 @@
             AllowedIPs = 10.0.0.3/32
             ```
         - run `ufw allow 51820/udp`
-        - run `wg-quick up wg0`
 
 # Windows
 
