@@ -100,6 +100,24 @@
 
         -   run `openvpn --genkey secret /etc/openvpn/ta.key`
         -   run `sudo openvpn --config client.ovpn`
+    
+    -   configure the wireguard client
+        - install `wireguard`
+        - run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
+        - add to `/etc/wireguard/wg0.conf`
+            ```
+            [Interface]
+            Address = 10.0.0.2/24
+            PrivateKey = <client_private_key>
+
+            [Peer]
+            PublicKey = <server_public_key>
+            Endpoint = 192.168.22.22:51820
+            AllowedIPs = 0.0.0.0/0
+            PersistentKeepalive = 25
+            ```
+        - run `wg-quick up wg0`
+            
 
 -   In router
 
@@ -219,6 +237,11 @@
             sudo ufw default allow outgoing
             sudo ufw enable
             ```
+    - enable IP forwarding in `/etc/sysctl.conf`:
+        -   add
+            ```
+            net.ipv4.ip_forward=1
+            ```
     -   set up the PPTP VPN server
         -   install `pptpd`
         -   configure the VPN server in `/etc/pptpd.conf`:
@@ -286,6 +309,28 @@
                 ```
 
         -   add user `vpnuser:vpn`
+
+    - set up the wireguard VPN server
+        - install `wireguard`
+        - run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
+        - add to `/etc/wireguard/wg0.conf`
+            ```
+            [Interface]
+            Address = 10.0.0.1/24
+            PrivateKey = <server_private_key>
+            ListenPort = 51820
+            SaveConfig = true
+
+            [Peer] #client1
+            PublicKey = <client_public_key>
+            AllowedIPs = 10.0.0.2/32
+
+            [Peer] #client2
+            PublicKey = <client_public_key>
+            AllowedIPs = 10.0.0.3/32
+            ```
+        - run `ufw allow 51820/udp`
+        - run `wg-quick up wg0`
 
 # Windows
 
