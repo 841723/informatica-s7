@@ -243,11 +243,7 @@
                 ```
         - run `ufw allow 1723/tcp`
         - run `ufw allow 47`
-        -   enable IP forwarding in `/etc/sysctl.conf`:
-            -   add
-                ```
-                net.ipv4.ip_forward=1
-                ```
+
 
     - set up the wireguard VPN server
         - install `wireguard`
