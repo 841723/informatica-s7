@@ -338,10 +338,9 @@
         -   bind the certificate to the website ip address `All Unassigned` and port `443`
         -   Configure/HSTS.../Enable
 
-https://www.transip.eu/knowledgebase/3352-installing-vpn-server-windows-server-2019
+<!-- https://www.transip.eu/knowledgebase/3352-installing-vpn-server-windows-server-2019 -->
 
--   for wireguard vpn client/server
-
+-   for wireguard vpn
     -   install wireguard
     -   create a new tunnels with same settings as in linux
 
@@ -376,3 +375,25 @@ https://www.transip.eu/knowledgebase/3352-installing-vpn-server-windows-server-2
             ```
 
     -   activate the tunnels
+
+
+- for sstp vpn
+    - in server
+        - install `Remote Access`
+        - add features `DirectAccess and VPN (RAS)`
+        - deploy `VPN` only
+        - configure only VPN
+        - add the certificate into `SSL Certificate Binding`
+        - add the user vpn:NSSisgreat1
+
+    - in client
+        - add new vpn connection
+            ```
+            VPN provider: Windows (built-in)
+            Connection name: SSTP VPN
+            Server name: www.nssfh.com
+            VPN type: Secure Socket Tunneling Protocol (SSTP)
+            Type of sign-in info: User name and password
+            User name: vpn
+            Password: NSSisgreat1
+            ```
