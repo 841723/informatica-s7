@@ -45,8 +45,8 @@
                     netmask 255.255.255.0
                     gateway 192.168.22.1
                 ```
-    - Other option:
-        - add to /etc/network/interfaces
+    -   Other option:
+        -   add to /etc/network/interfaces
             ```
             up route add -net 192.168.22.0 netmask 255.255.255.0 gw 192.168.11.1
             up route add -net 192.168.11.0 netmask 255.255.255.0 gw 192.168.22.1
@@ -60,7 +60,8 @@
             nameserver 192.168.11.1
             ```
     -   configure PPTP vpn client
-        - install `pptp-linux`
+
+        -   install `pptp-linux`
         -   create /etc/ppp/peers/myvpn
             -   add
                 ```
@@ -77,9 +78,11 @@
                 ```
 
     -   configure the wireguard client
-        - install `wireguard`
-        - run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
-        - add to `/etc/wireguard/wg0.conf`
+
+        -   install `wireguard`
+        -   run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
+        -   add to `/etc/wireguard/wg0.conf`
+
             ```
             [Interface]
             Address = 10.0.0.2/24
@@ -91,8 +94,8 @@
             AllowedIPs = 0.0.0.0/0
             PersistentKeepalive = 25
             ```
-        - run `wg-quick up wg0`
-            
+
+        -   run `wg-quick up wg0`
 
 -   In router
 
@@ -212,12 +215,13 @@
             sudo ufw default allow outgoing
             sudo ufw enable
             ```
-    - enable IP forwarding in `/etc/sysctl.conf`:
+    -   enable IP forwarding in `/etc/sysctl.conf`:
         -   add
             ```
             net.ipv4.ip_forward=1
             ```
     -   set up the PPTP VPN server
+
         -   install `pptpd`
         -   configure the VPN server in `/etc/pptpd.conf`:
             -   add
@@ -226,7 +230,9 @@
                 remoteip 10.10.0.101-200
                 ```
         -   configure the VPN options in `/etc/ppp/pptpd-options`:
+
             -   comment out
+
                 ```
                 refuse-pap
                 refuse-chap
@@ -235,20 +241,22 @@
                 ms-dns 10.0.0.1
                 ms-dns 10.0.0.2
                 ```
+
         -   configure the VPN users in `/etc/ppp/chap-secrets`:
             -   add
                 ```
                 client1 pptpd 123 *
                 client1 * 123 *
                 ```
-        - run `ufw allow 1723/tcp`
-        - run `ufw allow 47`
+        -   run `ufw allow 1723/tcp`
+        -   run `ufw allow 47`
 
+    -   set up the wireguard VPN server
 
-    - set up the wireguard VPN server
-        - install `wireguard`
-        - run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
-        - add to `/etc/wireguard/wg0.conf`
+        -   install `wireguard`
+        -   run `umask 077; wg genkey | tee privatekey | wg pubkey > publickey`
+        -   add to `/etc/wireguard/wg0.conf`
+
             ```
             [Interface]
             Address = 10.0.0.1/24
@@ -264,7 +272,8 @@
             PublicKey = <client_public_key>
             AllowedIPs = 10.0.0.3/32
             ```
-        - run `ufw allow 51820/udp`
+
+        -   run `ufw allow 51820/udp`
 
 # Windows
 
@@ -297,35 +306,73 @@
 -   Enable ICMP echo request in firewall in each machine
 
 -   In client
+
     -   create the rule to get to int_net_2
-        - `route add 192.168.222.0 mask 255.255.255.0 192.168.111.1 -p`
-    - set preferred DNS server to `192.168.111.1`
+        -   `route add 192.168.222.0 mask 255.255.255.0 192.168.111.1 -p`
+    -   set preferred DNS server to `192.168.111.1`
 
 -   In router
+
     -   turn on the IP messages forwarding
         -   in regedit `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\IPEnableRouter = 1`
     -   set up the DNS server role
-        - create a new zone `nssfh.com`
-        - create hosts with correct ip addresses
-            - `router.nssfh.com` -> `192.168.111.1`
-            - `router.nssfh.com` -> `192.168.222.1`
-            - `www.nssfh.com` -> `192.168.222.222`
-            - `client1.nssfh.com` -> `192.168.111.111`
-        
+        -   create a new zone `nssfh.com`
+        -   create hosts with correct ip addresses
+            -   `router.nssfh.com` -> `192.168.111.1`
+            -   `router.nssfh.com` -> `192.168.222.1`
+            -   `www.nssfh.com` -> `192.168.222.222`
+            -   `client1.nssfh.com` -> `192.168.111.111`
 
 -   In server
+
     -   create the rule to get to int_net_1
         -   `route add 192.168.111.0 mask 255.255.255.0 192.168.222.1 -p`
-    - set preferred DNS server to `192.168.222.1`
-    
-    - for web server
-        - install `IIS`
-        - create a new website
-            - bind the website to ip address `All Unassigned` and port `80`
-            - add `index.html` to the website
-        - create a self-signed certificate
-        - bind the certificate to the website ip address `All Unassigned` and port `443` 
-        - Configure/HSTS.../Enable
+    -   set preferred DNS server to `192.168.222.1`
 
+    -   for web server
+        -   install `IIS`
+        -   create a new website
+            -   bind the website to ip address `All Unassigned` and port `80`
+            -   add `index.html` to the website
+        -   create a self-signed certificate
+        -   bind the certificate to the website ip address `All Unassigned` and port `443`
+        -   Configure/HSTS.../Enable
 
 https://www.transip.eu/knowledgebase/3352-installing-vpn-server-windows-server-2019
+
+-   for wireguard vpn client/server
+
+    -   install wireguard
+    -   create a new tunnels with same settings as in linux
+
+        -   for server:
+
+            ```
+            [Interface]
+            Address = 10.0.0.1/24
+            PrivateKey = <server_private_key>
+            ListenPort = 51820
+            SaveConfig = true
+
+            [Peer] #client1
+            PublicKey = <client_public_key>
+            AllowedIPs = 10.0.0.2/32
+
+            [Peer] #client2
+            PublicKey = <client_public_key>
+            AllowedIPs = 10.0.0.3/32
+            ```
+        - for client:
+            ```
+            [Interface]
+            Address = 10.0.0.2/24
+            PrivateKey = <client_private_key>
+
+            [Peer]
+            PublicKey = <server_public_key>
+            Endpoint = 192.168.22.22:51820
+            AllowedIPs = 0.0.0.0/0
+            PersistentKeepalive = 25
+            ```
+
+    -   activate the tunnels
