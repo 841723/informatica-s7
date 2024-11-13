@@ -10,6 +10,7 @@
 
 #include <stdint.h>
 #include <main.h>
+#include "fatfs.h"
 
 void FATFS_Init();
 void FATFS_Run();

@@ -8,7 +8,7 @@
 #include <display.h>
 
 
-void Display_Image_DMA2D(uint16_t* src, uint16_t width, uint16_t height) {
+HAL_StatusTypeDef Display_Image_DMA2D(uint16_t* src, uint16_t width, uint16_t height) {
     DMA2D_HandleTypeDef hdma2d;
 
     // Configura DMA2D
@@ -18,7 +18,7 @@ void Display_Image_DMA2D(uint16_t* src, uint16_t width, uint16_t height) {
     hdma2d.Init.OutputOffset = 0;
 
     if (HAL_DMA2D_Init(&hdma2d) != HAL_OK) {
-        Error_Handler();
+        return HAL_ERROR;
     }
 
     // Inicia la transferencia de la imagen al framebuffer
@@ -26,5 +26,6 @@ void Display_Image_DMA2D(uint16_t* src, uint16_t width, uint16_t height) {
 
     // Espera hasta que se complete la transferencia
     HAL_DMA2D_PollForTransfer(&hdma2d, HAL_MAX_DELAY);
-}
+
+    return HAL_OK;
 }

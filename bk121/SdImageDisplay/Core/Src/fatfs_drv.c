@@ -72,7 +72,7 @@ void FATFS_Scan(char* path, char filenames[8][64]) {
                 // If it's a directory, you can optionally recurse into it
             } else {
                 // Check if the file is an image
-                if (strstr(fno.fname, ".BMP") || strstr(fno.fname, ".JPG")) {
+                if (strstr(fno.fname, "AABUILDING.BMP")) {
                     // Full file path (assuming 'path' is the current directory)
                     sprintf(filenames[idx], "%s", fno.fname);
                     idx++;
@@ -87,6 +87,8 @@ void FATFS_Scan(char* path, char filenames[8][64]) {
 
 
 FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer, uint32_t bufsize) {
+	FIL file;
+    UINT bytesRead = 0;
     FRESULT res = f_open(&file, filename, FA_READ);
     if (res != FR_OK) {
         return res; // Error al abrir el archivo

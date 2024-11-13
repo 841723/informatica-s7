@@ -1,89 +1,21 @@
-11:08:16 **** Incremental Build of configuration Debug for project SdImageDisplay ****
+11:38:22 **** Incremental Build of configuration Debug for project SdImageDisplay ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/display.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/display.d" -MT"Core/Src/display.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/display.o"
 arm-none-eabi-gcc "../Core/Src/fatfs_drv.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fatfs_drv.d" -MT"Core/Src/fatfs_drv.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fatfs_drv.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/display.c: In function 'Display_Image_DMA2D':
-../Core/Src/display.c:12:5: error: unknown type name 'DMA2D_HandleTypeDef'
-   12 |     DMA2D_HandleTypeDef hdma2d;
-      |     ^~~~~~~~~~~~~~~~~~~
-../Core/Src/display.c:15:11: error: request for member 'Instance' in something not a structure or union
-   15 |     hdma2d.Instance = DMA2D;
-      |           ^
-../Core/Src/display.c:15:23: error: 'DMA2D' undeclared (first use in this function)
-   15 |     hdma2d.Instance = DMA2D;
-      |                       ^~~~~
-../Core/Src/display.c:15:23: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/display.c:16:11: error: request for member 'Init' in something not a structure or union
-   16 |     hdma2d.Init.Mode = DMA2D_M2M;
-      |           ^
-../Core/Src/display.c:16:24: error: 'DMA2D_M2M' undeclared (first use in this function)
-   16 |     hdma2d.Init.Mode = DMA2D_M2M;
-      |                        ^~~~~~~~~
-../Core/Src/display.c:17:11: error: request for member 'Init' in something not a structure or union
-   17 |     hdma2d.Init.ColorMode = DMA2D_RGB565;
-      |           ^
-../Core/Src/display.c:17:29: error: 'DMA2D_RGB565' undeclared (first use in this function)
-   17 |     hdma2d.Init.ColorMode = DMA2D_RGB565;
-      |                             ^~~~~~~~~~~~
-../Core/Src/display.c:18:11: error: request for member 'Init' in something not a structure or union
-   18 |     hdma2d.Init.OutputOffset = 0;
-      |           ^
-../Core/Src/display.c:20:9: warning: implicit declaration of function 'HAL_DMA2D_Init' [-Wimplicit-function-declaration]
-   20 |     if (HAL_DMA2D_Init(&hdma2d) != HAL_OK) {
-      |         ^~~~~~~~~~~~~~
-../Core/Src/display.c:20:36: error: 'HAL_OK' undeclared (first use in this function)
-   20 |     if (HAL_DMA2D_Init(&hdma2d) != HAL_OK) {
-      |                                    ^~~~~~
-../Core/Src/display.c:21:9: warning: implicit declaration of function 'Error_Handler' [-Wimplicit-function-declaration]
-   21 |         Error_Handler();
-      |         ^~~~~~~~~~~~~
-../Core/Src/display.c:25:5: warning: implicit declaration of function 'HAL_DMA2D_Start' [-Wimplicit-function-declaration]
-   25 |     HAL_DMA2D_Start(&hdma2d, (uint32_t)src, FRAME_BUFFER_ADDRESS, width, height);
-      |     ^~~~~~~~~~~~~~~
-../Core/Src/display.c:25:45: error: 'FRAME_BUFFER_ADDRESS' undeclared (first use in this function)
-   25 |     HAL_DMA2D_Start(&hdma2d, (uint32_t)src, FRAME_BUFFER_ADDRESS, width, height);
-      |                                             ^~~~~~~~~~~~~~~~~~~~
-../Core/Src/display.c:28:5: warning: implicit declaration of function 'HAL_DMA2D_PollForTransfer' [-Wimplicit-function-declaration]
-   28 |     HAL_DMA2D_PollForTransfer(&hdma2d, HAL_MAX_DELAY);
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/display.c:28:40: error: 'HAL_MAX_DELAY' undeclared (first use in this function)
-   28 |     HAL_DMA2D_PollForTransfer(&hdma2d, HAL_MAX_DELAY);
-      |                                        ^~~~~~~~~~~~~
-../Core/Src/display.c: At top level:
-../Core/Src/display.c:30:1: error: expected identifier or '(' before '}' token
-   30 | }
-      | ^
-make: *** [Core/Src/subdir.mk:40: Core/Src/display.o] Error 1
-make: *** Waiting for unfinished jobs....
-In file included from ../Core/Src/fatfs_drv.c:8:
-../Core/Inc/fatfs_drv.h:18:1: error: unknown type name 'FRESULT'
-   18 | FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer, uint32_t bufsize);
-      | ^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:123:32: error: 'filename' undeclared (first use in this function); did you mean 'filenames'?
-  123 |   if (FATFS_Read_Image_From_SD(filename, image_buffer, IMAGE_SIZE) == FR_OK) {
-      |                                ^~~~~~~~
-      |                                filenames
-../Core/Src/main.c:123:32: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/fatfs_drv.c:89:9: error: conflicting types for 'FATFS_Read_Image_From_SD'; have 'FRESULT(const char *, uint8_t *, uint32_t)' {aka 'FRESULT(const char *, unsigned char *, long unsigned int)'}
-   89 | FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer, uint32_t bufsize) {
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Inc/fatfs_drv.h:18:9: note: previous declaration of 'FATFS_Read_Image_From_SD' with type 'int(const char *, uint8_t *, uint32_t)' {aka 'int(const char *, unsigned char *, long unsigned int)'}
-   18 | FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer, uint32_t bufsize);
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/fatfs_drv.c: In function 'FATFS_Read_Image_From_SD':
-../Core/Src/fatfs_drv.c:90:27: error: 'file' undeclared (first use in this function)
-   90 |     FRESULT res = f_open(&file, filename, FA_READ);
-      |                           ^~~~
-../Core/Src/fatfs_drv.c:90:27: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:124:7: warning: implicit declaration of function 'DisplayImageDMA2D'; did you mean 'Display_Image_DMA2D'? [-Wimplicit-function-declaration]
-  124 |       DisplayImageDMA2D((uint16_t*)image_buffer, IMAGE_WIDTH, IMAGE_HEIGHT);
-      |       ^~~~~~~~~~~~~~~~~
-      |       Display_Image_DMA2D
-../Core/Src/fatfs_drv.c:96:43: error: 'bytesRead' undeclared (first use in this function)
-   96 |     res = f_read(&file, buffer, bufsize, &bytesRead);
-      |                                           ^~~~~~~~~
-make: *** [Core/Src/subdir.mk:40: Core/Src/fatfs_drv.o] Error 1
-make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "SdImageDisplay.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\diego\Desktop\unizar\informatica-s7\bk121\SdImageDisplay\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SdImageDisplay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SdImageDisplay.elf
+ 
+arm-none-eabi-size  SdImageDisplay.elf 
+arm-none-eabi-objdump -h -S SdImageDisplay.elf  > "SdImageDisplay.list"
+   text	   data	    bss	    dec	    hex	filename
+  38688	     92	   4676	  43456	   a9c0	SdImageDisplay.elf
+Finished building: default.size.stdout
+ 
+Finished building: SdImageDisplay.list
+ 
+11:38:26 **** Incremental Build of configuration Debug for project SdImageDisplay ****
+make -j8 all 
+arm-none-eabi-size  SdImageDisplay.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38688	     92	   4676	  43456	   a9c0	SdImageDisplay.elf
+Finished building: default.size.stdout
+ 
