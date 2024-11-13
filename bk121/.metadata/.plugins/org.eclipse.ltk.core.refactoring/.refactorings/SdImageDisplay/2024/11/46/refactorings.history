@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;SdImageDisplay/Core/Src/fatuser.c&apos; to &apos;fatfs_drv.c&apos;" description="Rename resource &apos;fatuser.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/fatuser.c" name="fatfs_drv.c" stamp="1731489771736" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;SdImageDisplay/Core/Inc/fatuser.h&apos; to &apos;fatfs_drv.h&apos;" description="Rename resource &apos;fatuser.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/fatuser.h" name="fatfs_drv.h" stamp="1731489779382" updateReferences="true"/>
+</session>

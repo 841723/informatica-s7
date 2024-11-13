@@ -384,6 +384,11 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 
+#define FRAME_BUFFER_ADDRESS ((uint32_t)0xC0000000)
+#define IMAGE_WIDTH 240
+#define IMAGE_HEIGHT 320
+#define IMAGE_SIZE (IMAGE_WIDTH * IMAGE_HEIGHT * 2)  // Para RGB565
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
