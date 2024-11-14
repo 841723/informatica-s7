@@ -1,0 +1,299 @@
+id,iso2Code,name,capitalCity,region
+AFE,ZH,Africa Eastern and Southern,,Aggregates
+AFG,AF,Afghanistan,Kabul,South Asia
+AFR,A9,Africa,,Aggregates
+AFW,ZI,Africa Western and Central,,Aggregates
+AGO,AO,Angola,Luanda,Sub-Saharan Africa 
+ALB,AL,Albania,Tirane,Europe & Central Asia
+AND,AD,Andorra,Andorra la Vella,Europe & Central Asia
+ARB,1A,Arab World,,Aggregates
+ARE,AE,United Arab Emirates,Abu Dhabi,Middle East & North Africa
+ARG,AR,Argentina,Buenos Aires,Latin America & Caribbean 
+ARM,AM,Armenia,Yerevan,Europe & Central Asia
+ASM,AS,American Samoa,Pago Pago,East Asia & Pacific
+ATG,AG,Antigua and Barbuda,Saint John's,Latin America & Caribbean 
+AUS,AU,Australia,Canberra,East Asia & Pacific
+AUT,AT,Austria,Vienna,Europe & Central Asia
+AZE,AZ,Azerbaijan,Baku,Europe & Central Asia
+BDI,BI,Burundi,Bujumbura,Sub-Saharan Africa 
+BEA,B4,East Asia & Pacific (IBRD-only countries),,Aggregates
+BEC,B7,Europe & Central Asia (IBRD-only countries),,Aggregates
+BEL,BE,Belgium,Brussels,Europe & Central Asia
+BEN,BJ,Benin,Porto-Novo,Sub-Saharan Africa 
+BFA,BF,Burkina Faso,Ouagadougou,Sub-Saharan Africa 
+BGD,BD,Bangladesh,Dhaka,South Asia
+BGR,BG,Bulgaria,Sofia,Europe & Central Asia
+BHI,B1,IBRD countries classified as high income,,Aggregates
+BHR,BH,Bahrain,Manama,Middle East & North Africa
+BHS,BS,"Bahamas, The",Nassau,Latin America & Caribbean 
+BIH,BA,Bosnia and Herzegovina,Sarajevo,Europe & Central Asia
+BLA,B2,Latin America & the Caribbean (IBRD-only countries),,Aggregates
+BLR,BY,Belarus,Minsk,Europe & Central Asia
+BLZ,BZ,Belize,Belmopan,Latin America & Caribbean 
+BMN,B3,Middle East & North Africa (IBRD-only countries),,Aggregates
+BMU,BM,Bermuda,Hamilton,North America
+BOL,BO,Bolivia,La Paz,Latin America & Caribbean 
+BRA,BR,Brazil,Brasilia,Latin America & Caribbean 
+BRB,BB,Barbados,Bridgetown,Latin America & Caribbean 
+BRN,BN,Brunei Darussalam,Bandar Seri Begawan,East Asia & Pacific
+BSS,B6,Sub-Saharan Africa (IBRD-only countries),,Aggregates
+BTN,BT,Bhutan,Thimphu,South Asia
+BWA,BW,Botswana,Gaborone,Sub-Saharan Africa 
+CAA,C9,Sub-Saharan Africa (IFC classification),,Aggregates
+CAF,CF,Central African Republic,Bangui,Sub-Saharan Africa 
+CAN,CA,Canada,Ottawa,North America
+CEA,C4,East Asia and the Pacific (IFC classification),,Aggregates
+CEB,B8,Central Europe and the Baltics,,Aggregates
+CEU,C5,Europe and Central Asia (IFC classification),,Aggregates
+CHE,CH,Switzerland,Bern,Europe & Central Asia
+CHI,JG,Channel Islands,,Europe & Central Asia
+CHL,CL,Chile,Santiago,Latin America & Caribbean 
+CHN,CN,China,Beijing,East Asia & Pacific
+CIV,CI,Cote d'Ivoire,Yamoussoukro,Sub-Saharan Africa 
+CLA,C6,Latin America and the Caribbean (IFC classification),,Aggregates
+CME,C7,Middle East and North Africa (IFC classification),,Aggregates
+CMR,CM,Cameroon,Yaounde,Sub-Saharan Africa 
+COD,CD,"Congo, Dem. Rep.",Kinshasa,Sub-Saharan Africa 
+COG,CG,"Congo, Rep.",Brazzaville,Sub-Saharan Africa 
+COL,CO,Colombia,Bogota,Latin America & Caribbean 
+COM,KM,Comoros,Moroni,Sub-Saharan Africa 
+CPV,CV,Cabo Verde,Praia,Sub-Saharan Africa 
+CRI,CR,Costa Rica,San Jose,Latin America & Caribbean 
+CSA,C8,South Asia (IFC classification),,Aggregates
+CSS,S3,Caribbean small states,,Aggregates
+CUB,CU,Cuba,Havana,Latin America & Caribbean 
+CUW,CW,Curacao,Willemstad,Latin America & Caribbean 
+CYM,KY,Cayman Islands,George Town,Latin America & Caribbean 
+CYP,CY,Cyprus,Nicosia,Europe & Central Asia
+CZE,CZ,Czech Republic,Prague,Europe & Central Asia
+DEA,D4,East Asia & Pacific (IDA-eligible countries),,Aggregates
+DEC,D7,Europe & Central Asia (IDA-eligible countries),,Aggregates
+DEU,DE,Germany,Berlin,Europe & Central Asia
+DFS,D8,IDA countries classified as Fragile Situations,,Aggregates
+DJI,DJ,Djibouti,Djibouti,Middle East & North Africa
+DLA,D2,Latin America & the Caribbean (IDA-eligible countries),,Aggregates
+DMA,DM,Dominica,Roseau,Latin America & Caribbean 
+DMN,D3,Middle East & North Africa (IDA-eligible countries),,Aggregates
+DNF,D9,IDA countries not classified as Fragile Situations,,Aggregates
+DNK,DK,Denmark,Copenhagen,Europe & Central Asia
+DNS,N6,IDA countries in Sub-Saharan Africa not classified as fragile situations ,,Aggregates
+DOM,DO,Dominican Republic,Santo Domingo,Latin America & Caribbean 
+DSA,D5,South Asia (IDA-eligible countries),,Aggregates
+DSF,F6,IDA countries in Sub-Saharan Africa classified as fragile situations ,,Aggregates
+DSS,D6,Sub-Saharan Africa (IDA-eligible countries),,Aggregates
+DZA,DZ,Algeria,Algiers,Middle East & North Africa
+EAP,4E,East Asia & Pacific (excluding high income),,Aggregates
+EAR,V2,Early-demographic dividend,,Aggregates
+EAS,Z4,East Asia & Pacific,,Aggregates
+ECA,7E,Europe & Central Asia (excluding high income),,Aggregates
+ECS,Z7,Europe & Central Asia,,Aggregates
+ECU,EC,Ecuador,Quito,Latin America & Caribbean 
+EGY,EG,"Egypt, Arab Rep.",Cairo,Middle East & North Africa
+EMU,XC,Euro area,,Aggregates
+ERI,ER,Eritrea,Asmara,Sub-Saharan Africa 
+ESP,ES,Spain,Madrid,Europe & Central Asia
+EST,EE,Estonia,Tallinn,Europe & Central Asia
+ETH,ET,Ethiopia,Addis Ababa,Sub-Saharan Africa 
+EUU,EU,European Union,,Aggregates
+FCS,F1,Fragile and conflict affected situations,,Aggregates
+FIN,FI,Finland,Helsinki,Europe & Central Asia
+FJI,FJ,Fiji,Suva,East Asia & Pacific
+FRA,FR,France,Paris,Europe & Central Asia
+FRO,FO,Faroe Islands,Torshavn,Europe & Central Asia
+FSM,FM,"Micronesia, Fed. Sts.",Palikir,East Asia & Pacific
+FXS,6F,"IDA countries classified as fragile situations, excluding Sub-Saharan Africa",,Aggregates
+GAB,GA,Gabon,Libreville,Sub-Saharan Africa 
+GBR,GB,United Kingdom,London,Europe & Central Asia
+GEO,GE,Georgia,Tbilisi,Europe & Central Asia
+GHA,GH,Ghana,Accra,Sub-Saharan Africa 
+GIB,GI,Gibraltar,,Europe & Central Asia
+GIN,GN,Guinea,Conakry,Sub-Saharan Africa 
+GMB,GM,"Gambia, The",Banjul,Sub-Saharan Africa 
+GNB,GW,Guinea-Bissau,Bissau,Sub-Saharan Africa 
+GNQ,GQ,Equatorial Guinea,Malabo,Sub-Saharan Africa 
+GRC,GR,Greece,Athens,Europe & Central Asia
+GRD,GD,Grenada,Saint George's,Latin America & Caribbean 
+GRL,GL,Greenland,Nuuk,Europe & Central Asia
+GTM,GT,Guatemala,Guatemala City,Latin America & Caribbean 
+GUM,GU,Guam,Agana,East Asia & Pacific
+GUY,GY,Guyana,Georgetown,Latin America & Caribbean 
+HIC,XD,High income,,Aggregates
+HKG,HK,"Hong Kong SAR, China",,East Asia & Pacific
+HND,HN,Honduras,Tegucigalpa,Latin America & Caribbean 
+HPC,XE,Heavily indebted poor countries (HIPC),,Aggregates
+HRV,HR,Croatia,Zagreb,Europe & Central Asia
+HTI,HT,Haiti,Port-au-Prince,Latin America & Caribbean 
+HUN,HU,Hungary,Budapest,Europe & Central Asia
+IBB,ZB,"IBRD, including blend",,Aggregates
+IBD,XF,IBRD only,,Aggregates
+IBT,ZT,IDA & IBRD total,,Aggregates
+IDA,XG,IDA total,,Aggregates
+IDB,XH,IDA blend,,Aggregates
+IDN,ID,Indonesia,Jakarta,East Asia & Pacific
+IDX,XI,IDA only,,Aggregates
+IMN,IM,Isle of Man,Douglas,Europe & Central Asia
+IND,IN,India,New Delhi,South Asia
+INX,XY,Not classified,,Aggregates
+IRL,IE,Ireland,Dublin,Europe & Central Asia
+IRN,IR,"Iran, Islamic Rep.",Tehran,Middle East & North Africa
+IRQ,IQ,Iraq,Baghdad,Middle East & North Africa
+ISL,IS,Iceland,Reykjavik,Europe & Central Asia
+ISR,IL,Israel,,Middle East & North Africa
+ITA,IT,Italy,Rome,Europe & Central Asia
+JAM,JM,Jamaica,Kingston,Latin America & Caribbean 
+JOR,JO,Jordan,Amman,Middle East & North Africa
+JPN,JP,Japan,Tokyo,East Asia & Pacific
+KAZ,KZ,Kazakhstan,Astana,Europe & Central Asia
+KEN,KE,Kenya,Nairobi,Sub-Saharan Africa 
+KGZ,KG,Kyrgyz Republic,Bishkek,Europe & Central Asia
+KHM,KH,Cambodia,Phnom Penh,East Asia & Pacific
+KIR,KI,Kiribati,Tarawa,East Asia & Pacific
+KNA,KN,St. Kitts and Nevis,Basseterre,Latin America & Caribbean 
+KOR,KR,"Korea, Rep.",Seoul,East Asia & Pacific
+KWT,KW,Kuwait,Kuwait City,Middle East & North Africa
+LAC,XJ,Latin America & Caribbean (excluding high income),,Aggregates
+LAO,LA,Lao PDR,Vientiane,East Asia & Pacific
+LBN,LB,Lebanon,Beirut,Middle East & North Africa
+LBR,LR,Liberia,Monrovia,Sub-Saharan Africa 
+LBY,LY,Libya,Tripoli,Middle East & North Africa
+LCA,LC,St. Lucia,Castries,Latin America & Caribbean 
+LCN,ZJ,Latin America & Caribbean ,,Aggregates
+LDC,XL,Least developed countries: UN classification,,Aggregates
+LIC,XM,Low income,,Aggregates
+LIE,LI,Liechtenstein,Vaduz,Europe & Central Asia
+LKA,LK,Sri Lanka,Colombo,South Asia
+LMC,XN,Lower middle income,,Aggregates
+LMY,XO,Low & middle income,,Aggregates
+LSO,LS,Lesotho,Maseru,Sub-Saharan Africa 
+LTE,V3,Late-demographic dividend,,Aggregates
+LTU,LT,Lithuania,Vilnius,Europe & Central Asia
+LUX,LU,Luxembourg,Luxembourg,Europe & Central Asia
+LVA,LV,Latvia,Riga,Europe & Central Asia
+MAC,MO,"Macao SAR, China",,East Asia & Pacific
+MAF,MF,St. Martin (French part),Marigot,Latin America & Caribbean 
+MAR,MA,Morocco,Rabat,Middle East & North Africa
+MCO,MC,Monaco,Monaco,Europe & Central Asia
+MDA,MD,Moldova,Chisinau,Europe & Central Asia
+MDE,M1,Middle East (developing only),,Aggregates
+MDG,MG,Madagascar,Antananarivo,Sub-Saharan Africa 
+MDV,MV,Maldives,Male,South Asia
+MEA,ZQ,Middle East & North Africa,,Aggregates
+MEX,MX,Mexico,Mexico City,Latin America & Caribbean 
+MHL,MH,Marshall Islands,Majuro,East Asia & Pacific
+MIC,XP,Middle income,,Aggregates
+MKD,MK,North Macedonia,Skopje,Europe & Central Asia
+MLI,ML,Mali,Bamako,Sub-Saharan Africa 
+MLT,MT,Malta,Valletta,Middle East & North Africa
+MMR,MM,Myanmar,Naypyidaw,East Asia & Pacific
+MNA,XQ,Middle East & North Africa (excluding high income),,Aggregates
+MNE,ME,Montenegro,Podgorica,Europe & Central Asia
+MNG,MN,Mongolia,Ulaanbaatar,East Asia & Pacific
+MNP,MP,Northern Mariana Islands,Saipan,East Asia & Pacific
+MOZ,MZ,Mozambique,Maputo,Sub-Saharan Africa 
+MRT,MR,Mauritania,Nouakchott,Sub-Saharan Africa 
+MUS,MU,Mauritius,Port Louis,Sub-Saharan Africa 
+MWI,MW,Malawi,Lilongwe,Sub-Saharan Africa 
+MYS,MY,Malaysia,Kuala Lumpur,East Asia & Pacific
+NAC,XU,North America,,Aggregates
+NAF,M2,North Africa,,Aggregates
+NAM,,Namibia,Windhoek,Sub-Saharan Africa 
+NCL,NC,New Caledonia,Noum'ea,East Asia & Pacific
+NER,NE,Niger,Niamey,Sub-Saharan Africa 
+NGA,NG,Nigeria,Abuja,Sub-Saharan Africa 
+NIC,NI,Nicaragua,Managua,Latin America & Caribbean 
+NLD,NL,Netherlands,Amsterdam,Europe & Central Asia
+NOR,NO,Norway,Oslo,Europe & Central Asia
+NPL,NP,Nepal,Kathmandu,South Asia
+NRS,6X,Non-resource rich Sub-Saharan Africa countries,,Aggregates
+NRU,NR,Nauru,Yaren District,East Asia & Pacific
+NXS,6N,"IDA countries not classified as fragile situations, excluding Sub-Saharan Africa",,Aggregates
+NZL,NZ,New Zealand,Wellington,East Asia & Pacific
+OED,OE,OECD members,,Aggregates
+OMN,OM,Oman,Muscat,Middle East & North Africa
+OSS,S4,Other small states,,Aggregates
+PAK,PK,Pakistan,Islamabad,South Asia
+PAN,PA,Panama,Panama City,Latin America & Caribbean 
+PER,PE,Peru,Lima,Latin America & Caribbean 
+PHL,PH,Philippines,Manila,East Asia & Pacific
+PLW,PW,Palau,Koror,East Asia & Pacific
+PNG,PG,Papua New Guinea,Port Moresby,East Asia & Pacific
+POL,PL,Poland,Warsaw,Europe & Central Asia
+PRE,V1,Pre-demographic dividend,,Aggregates
+PRI,PR,Puerto Rico,San Juan,Latin America & Caribbean 
+PRK,KP,"Korea, Dem. People's Rep.",Pyongyang,East Asia & Pacific
+PRT,PT,Portugal,Lisbon,Europe & Central Asia
+PRY,PY,Paraguay,Asuncion,Latin America & Caribbean 
+PSE,PS,West Bank and Gaza,,Middle East & North Africa
+PSS,S2,Pacific island small states,,Aggregates
+PST,V4,Post-demographic dividend,,Aggregates
+PYF,PF,French Polynesia,Papeete,East Asia & Pacific
+QAT,QA,Qatar,Doha,Middle East & North Africa
+ROU,RO,Romania,Bucharest,Europe & Central Asia
+RRS,R6,Resource rich Sub-Saharan Africa countries,,Aggregates
+RUS,RU,Russian Federation,Moscow,Europe & Central Asia
+RWA,RW,Rwanda,Kigali,Sub-Saharan Africa 
+SAS,8S,South Asia,,Aggregates
+SAU,SA,Saudi Arabia,Riyadh,Middle East & North Africa
+SDN,SD,Sudan,Khartoum,Sub-Saharan Africa 
+SEN,SN,Senegal,Dakar,Sub-Saharan Africa 
+SGP,SG,Singapore,Singapore,East Asia & Pacific
+SLB,SB,Solomon Islands,Honiara,East Asia & Pacific
+SLE,SL,Sierra Leone,Freetown,Sub-Saharan Africa 
+SLV,SV,El Salvador,San Salvador,Latin America & Caribbean 
+SMR,SM,San Marino,San Marino,Europe & Central Asia
+SOM,SO,Somalia,Mogadishu,Sub-Saharan Africa 
+SRB,RS,Serbia,Belgrade,Europe & Central Asia
+SSA,ZF,Sub-Saharan Africa (excluding high income),,Aggregates
+SSD,SS,South Sudan,Juba,Sub-Saharan Africa 
+SSF,ZG,Sub-Saharan Africa ,,Aggregates
+SST,S1,Small states,,Aggregates
+STP,ST,Sao Tome and Principe,Sao Tome,Sub-Saharan Africa 
+SUR,SR,Suriname,Paramaribo,Latin America & Caribbean 
+SVK,SK,Slovak Republic,Bratislava,Europe & Central Asia
+SVN,SI,Slovenia,Ljubljana,Europe & Central Asia
+SWE,SE,Sweden,Stockholm,Europe & Central Asia
+SWZ,SZ,Eswatini,Mbabane,Sub-Saharan Africa 
+SXM,SX,Sint Maarten (Dutch part),Philipsburg,Latin America & Caribbean 
+SXZ,A4,Sub-Saharan Africa excluding South Africa,,Aggregates
+SYC,SC,Seychelles,Victoria,Sub-Saharan Africa 
+SYR,SY,Syrian Arab Republic,Damascus,Middle East & North Africa
+TCA,TC,Turks and Caicos Islands,Grand Turk,Latin America & Caribbean 
+TCD,TD,Chad,N'Djamena,Sub-Saharan Africa 
+TEA,T4,East Asia & Pacific (IDA & IBRD countries),,Aggregates
+TEC,T7,Europe & Central Asia (IDA & IBRD countries),,Aggregates
+TGO,TG,Togo,Lome,Sub-Saharan Africa 
+THA,TH,Thailand,Bangkok,East Asia & Pacific
+TJK,TJ,Tajikistan,Dushanbe,Europe & Central Asia
+TKM,TM,Turkmenistan,Ashgabat,Europe & Central Asia
+TLA,T2,Latin America & the Caribbean (IDA & IBRD countries),,Aggregates
+TLS,TL,Timor-Leste,Dili,East Asia & Pacific
+TMN,T3,Middle East & North Africa (IDA & IBRD countries),,Aggregates
+TON,TO,Tonga,Nuku'alofa,East Asia & Pacific
+TSA,T5,South Asia (IDA & IBRD),,Aggregates
+TSS,T6,Sub-Saharan Africa (IDA & IBRD countries),,Aggregates
+TTO,TT,Trinidad and Tobago,Port-of-Spain,Latin America & Caribbean 
+TUN,TN,Tunisia,Tunis,Middle East & North Africa
+TUR,TR,Turkiye,Ankara,Europe & Central Asia
+TUV,TV,Tuvalu,Funafuti,East Asia & Pacific
+TWN,TW,"Taiwan, China",,East Asia & Pacific
+TZA,TZ,Tanzania,Dodoma,Sub-Saharan Africa 
+UGA,UG,Uganda,Kampala,Sub-Saharan Africa 
+UKR,UA,Ukraine,Kiev,Europe & Central Asia
+UMC,XT,Upper middle income,,Aggregates
+URY,UY,Uruguay,Montevideo,Latin America & Caribbean 
+USA,US,United States,Washington D.C.,North America
+UZB,UZ,Uzbekistan,Tashkent,Europe & Central Asia
+VCT,VC,St. Vincent and the Grenadines,Kingstown,Latin America & Caribbean 
+VEN,VE,"Venezuela, RB",Caracas,Latin America & Caribbean 
+VGB,VG,British Virgin Islands,Road Town,Latin America & Caribbean 
+VIR,VI,Virgin Islands (U.S.),Charlotte Amalie,Latin America & Caribbean 
+VNM,VN,Vietnam,Hanoi,East Asia & Pacific
+VUT,VU,Vanuatu,Port-Vila,East Asia & Pacific
+WLD,1W,World,,Aggregates
+WSM,WS,Samoa,Apia,East Asia & Pacific
+XKX,XK,Kosovo,Pristina,Europe & Central Asia
+XZN,A5,Sub-Saharan Africa excluding South Africa and Nigeria,,Aggregates
+YEM,YE,"Yemen, Rep.",Sana'a,Middle East & North Africa
+ZAF,ZA,South Africa,Pretoria,Sub-Saharan Africa 
+ZMB,ZM,Zambia,Lusaka,Sub-Saharan Africa 
+ZWE,ZW,Zimbabwe,Harare,Sub-Saharan Africa 
