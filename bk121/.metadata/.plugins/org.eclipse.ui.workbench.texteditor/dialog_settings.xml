@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="MX_FMC_Init"/>
 			<item value="bytesread"/>
 			<item value="USER CODE BEGIN 2"/>
 			<item value="USER CODE BEGIN 1"/>
