@@ -1,0 +1,104 @@
+site_id,site,country,site_type,site_area,elevation
+at0ill1,Illmitz am Neusiedler See,austria,background,rural_regional,117
+at31401,Mödling Bachgasse,austria,background,suburban,215
+at32701,"Schwechat Sportplatz,Mühlgasse",austria,background,suburban,155
+at4s406,Wels Linzerstraße,austria,background,suburban,316
+at4s416,Linz Neue Welt,austria,background,suburban,265
+at60170,Graz Süd Tiergartenweg,austria,background,suburban,345
+betn043,41N043 - HAREN,belgium,industrial,suburban,17
+betn060,43N060 - HAVINNES,belgium,background,rural,0
+betn085,43N085 - VIELSALM,belgium,background,rural,490
+betn132,43N132 - HABAY-LA-N.,belgium,background,rural,375
+betr001,41R001 - MOLENBEEK,belgium,background,urban,20
+betr222,43R222 - SERAING,belgium,background,suburban,65
+debb032,Eisenhüttenstadt,germany,industrial,suburban,40
+debb110,Dallgow-Döberitz,germany,background,suburban,39
+debe010,B Wedding-Amrumer Str.,germany,background,urban,35
+debe032,B Grunewald (3.5 m),germany,background,rural_nearcity,50
+debe065,B Friedrichshain-Frankfurter Allee,germany,traffic,urban,40
+debw004,Eggenstein,germany,background,rural_nearcity,109
+debw005,Mannheim-Nord,germany,industrial,suburban,94
+debw029,Aalen,germany,background,suburban,424
+deby001,Ansbach/Residenzstraße,germany,traffic,urban,400
+deby037,München/Stachus,germany,traffic,urban,521
+deby099,Augsburg/LfU,germany,background,suburban,495
+dehb001,Bremen-Mitte,germany,background,urban,10
+dehb005,Bremerhaven,germany,background,urban,3
+dehb013,Bremen-Hasenbüren,germany,industrial,rural_regional,4
+dehe005,Frankfurt-Höchst,germany,background,urban,103
+dehe013,Kassel-Mitte,germany,background,urban,181
+dehe018,Raunheim,germany,background,urban,90
+dehh008,Hamburg Sternschanze,germany,background,urban,15
+dehh015,Hamburg Veddel,germany,industrial,urban,4
+dehh068,Hamburg Habichtstraße,germany,traffic,urban,12
+demv004,Gülzow,germany,background,rural,17
+demv007,Rostock-Stuthof,germany,background,suburban,5
+demv022,Rostock-Holbeinplatz,germany,traffic,urban,9
+deni038,Osnabrück,germany,background,urban,95
+deni042,Göttingen,germany,background,suburban,170
+deni070,Salzgitter-Drütte,germany,industrial,rural,93
+denw002,Datteln-Hagem,germany,background,suburban,56
+denw021,Bottrop-Welheim,germany,industrial,urban,30
+derp001,Ludwigshafen-Oppau,germany,background,urban,91
+derp019,Kaiserslautern-Rathausplatz,germany,background,urban,232
+derp023,Worms-Hagenstraße,germany,traffic,urban,90
+desl003,Dillingen City,germany,industrial,urban,185
+desl012,Saarbrücken-City,germany,background,urban,192
+desl017,Völklingen-City Stadionstr.,germany,background,urban,189
+desn001,Annaberg-Buchholz,germany,background,urban,545
+desn025,Leipzig-Mitte,germany,traffic,urban,110
+desn074,Schwartenberg,germany,background,rural_regional,785
+dest011,Wernigerode/Bahnhof,germany,background,urban,235
+dest015,Bitterfeld/Wolfen,germany,industrial,suburban,75
+dest077,Magdeburg/West,germany,background,urban,58
+deth020,Erfurt Krämpferstr.,germany,background,urban,195
+deth027,Neuhaus,germany,background,rural_remote,840
+deth061,Hummelshain,germany,background,rural_remote,357
+deub004,Schauinsland,germany,background,rural_regional,1205
+deub005,Waldhof,germany,background,rural,74
+deub028,Zingst,germany,background,rural,1
+es0118a,ESCUELAS AGUIRRE,spain,traffic,urban,672
+es1239a,VALÈNCIA-PISTA DE SILLA,spain,traffic,urban,11
+es1269a,PALACIO DE DEPORTES,spain,traffic,urban,180
+es1271a,ARGENTINA,spain,traffic,urban,19
+es1353a,SAMA I,spain,background,urban,216
+es1610a,FONERS,spain,traffic,urban,23
+fr03043,MARSEILLE 5 AVENUES,france,background,urban,73
+fr04055,PARIS 1er Les Halles,france,background,urban,35
+fr05090,Le Havre ville-haute,france,background,urban,92
+fr09404,Poitiers Centre  Augouard,france,background,urban,110
+fr14012,Jean d Aulan,france,background,urban,96
+gr0003a,ARISTOTELOUS,greece,traffic,urban,95
+gr0018a,AGIA SOFIA,greece,traffic,urban,27
+gr0020a,KORDELIO,greece,industrial,urban,30
+gr0030a,PIREAUS-1,greece,traffic,urban,20
+gr0038a,Elefsina,greece,industrial,urban,20
+gr0046a,SINDOS,greece,industrial,urban,14
+hu0022a,Budapest Gilice,hungary,background,suburban,153
+hu0027a,Miskolc Buza,hungary,traffic,urban,125
+hu0034a,Veszprem,hungary,background,suburban,274
+hu0039a,Esztergom,hungary,background,urban,122
+hu0045a,Budapest Teleki,hungary,traffic,urban,90
+hu0057a,Szeged2,hungary,background,urban,79
+it0459a,CHIARAVALLE2,italy,background,suburban,15
+it0461a,FALCONARA SCUOLA,italy,industrial,suburban,10
+it0908a,BORMIO,italy,background,urban,1225
+it1773a,Genga -Parco Gola della Rossa,italy,background,rural_regional,550
+it1827a,Ancona Cittadella,italy,background,urban,100
+it2096a,BZ6 Via Amba Alagi,italy,background,urban,260
+nl00012,Amsterdam-Van Diemenstraat,netherlands,traffic,urban,4
+nl00014,Amsterdam-Vondelpark,netherlands,background,urban,2
+nl00444,De Zilk-Vogelaarsdreef,netherlands,background,rural,4
+nl00551,Ijmuiden-Kanaaldijk,netherlands,industrial,urban,1
+nl00553,Wijk aan Zee-Burgemeester Rothestraat,netherlands,industrial,urban,7
+pl0136a,Płock-Reja,poland,background,urban,101
+pl0138a,Radom-Tochtermana,poland,background,urban,159
+pl0175a,WIOŚ Olsztyn ul. Puszkina,poland,background,urban,120
+pl0194a,Wrocław - Korzeniowskiego,poland,background,urban,114
+pl0212a,Wschowa ul. Kazimierza Wielkiego,poland,background,urban,90
+pt02004,Estarreja/ Teixugueira,portugal,background,suburban,14
+pt02019,Ervedeira,portugal,background,rural,68
+pt03063,Paio Pires,portugal,industrial,suburban,47
+pt03071,Olivais,portugal,background,urban,32
+pt03072,Entrecampos,portugal,traffic,urban,86
+pt03083,Laranjeiro,portugal,background,urban,63
