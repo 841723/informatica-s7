@@ -86,21 +86,33 @@ void FATFS_Scan(char* path, char filenames[8][64]) {
 }
 
 
-FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer, uint32_t bufsize) {
+FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer) {
+    FATFS fs;
 	FIL file;
     UINT bytesRead = 0;
+
+
+    res = f_mount(&fs, "", 1);
+    if (res != FR_OK) {
+		return res;
+	}
+
     FRESULT res = f_open(&file, filename, FA_READ);
     if (res != FR_OK) {
-        return res; // Error al abrir el archivo
+        return res;
     }
 
     // Leer datos de la imagen en el buffer
-    res = f_read(&file, buffer, bufsize, &bytesRead);
+    res = f_read(&file, buffer, IMAGE_SIZE, &bytesRead);
     if (res != FR_OK || bytesRead == 0) {
         f_close(&file);
         return res; // Error de lectura
     }
 
+	buffer[bytesRead] = '\0';
     f_close(&file);
+
+    f_mount(NULL, "", 1);
+
     return FR_OK;  // Éxito
 }

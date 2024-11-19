@@ -16,7 +16,7 @@ void FATFS_Init();
 void FATFS_Run();
 void FATFS_Scan(char* path, char filenames[8][64]);
 
-FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer, uint32_t bufsize);
+FRESULT FATFS_Read_Image_From_SD(const char *filename, uint8_t *buffer);
 
 
 #endif /* INC_FATFS_DRV_H_ */

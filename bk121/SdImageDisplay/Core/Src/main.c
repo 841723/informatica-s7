@@ -73,6 +73,27 @@ static void MX_FMC_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+void MPU_Init(void) {
+    MPU_Region_InitTypeDef MPU_InitStruct;
+
+    HAL_MPU_Disable();
+
+    MPU_InitStruct.Enable = MPU_REGION_ENABLE;
+    MPU_InitStruct.BaseAddress = FRAME_BUFFER_ADDRESS;
+    MPU_InitStruct.Size = MPU_REGION_SIZE_16MB; // Ajusta según el tamaño de la SDRAM
+    MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+    MPU_InitStruct.IsBufferable = MPU_ACCESS_NOT_BUFFERABLE;
+    MPU_InitStruct.IsCacheable = MPU_ACCESS_CACHEABLE;
+    MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
+    MPU_InitStruct.Number = MPU_REGION_NUMBER0;
+    MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+    MPU_InitStruct.SubRegionDisable = 0x00;
+    MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_DISABLE;
+
+    HAL_MPU_ConfigRegion(&MPU_InitStruct);
+    HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -83,13 +104,16 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	char filenames[8][64];
+	const int height = 240;
+	const int width = 320;
 
-  for (unsigned int i = 0; i<8 ;i++) {
-    for (unsigned int j = 0; j<64 ;j++) {
-      filenames[i][j] = 0;
-    }
-  }
+//	char filenames[8][64];
+//
+//  for (unsigned int i = 0; i<8 ;i++) {
+//    for (unsigned int j = 0; j<64 ;j++) {
+//      filenames[i][j] = 0;
+//    }
+//  }
 
   /* USER CODE END 1 */
 
@@ -119,16 +143,29 @@ int main(void)
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
   FATFS_Init();
-  FATFS_Scan("", filenames);
+  // FATFS_Scan("", filenames);
 
   
-  uint8_t image_buffer[IMAGE_SIZE];
+//  uint8_t image_buffer[IMAGE_SIZE];
+//
+//  if (FATFS_Read_Image_From_SD("a.bmp", image_buffer) == FR_OK) {
+//    if (Display_Image_DMA2D((uint16_t*)image_buffer, IMAGE_WIDTH, IMAGE_HEIGHT) != HAL_OK) {
+//      Error_Handler();
+//    }
+//  }
 
-  if (FATFS_Read_Image_From_SD(filenames[0], image_buffer, IMAGE_SIZE) == FR_OK) {
-    if (Display_Image_DMA2D((uint16_t*)image_buffer, IMAGE_WIDTH, IMAGE_HEIGHT) != HAL_OK) {
-      Error_Handler();
-    } 
+  uint16_t image[height * width]; // Ejemplo de una imagen en RGB565 (240x320)
+
+  for (uint16_t y = 0; y < height; y++) {
+	  for (uint16_t x = 0; x < width; x++) {
+		  uint16_t color = (x * 31 / width) << 11; // Azul, con intensidad según la posición
+		  image[y * width + x] = color;
+	  }
   }
+
+  memset(image, 0xFFFF, sizeof(image)); // Imagen blanca
+  Display_Image_DMA2D(image, 240, 320);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -207,18 +244,18 @@ static void MX_DMA2D_Init(void)
   hdma2d.Init.Mode = DMA2D_M2M;
   hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB565;
   hdma2d.Init.OutputOffset = 0;
-  // hdma2d.LayerCfg[1].InputOffset = 0;
-  // hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_RGB565;
-  // hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
-  // hdma2d.LayerCfg[1].InputAlpha = 0;
+  hdma2d.LayerCfg[1].InputOffset = 0;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_RGB565;
+  hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
+  hdma2d.LayerCfg[1].InputAlpha = 0;
   if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
   {
     Error_Handler();
   }
-  // if (HAL_DMA2D_ConfigLayer(&hdma2d, 1) != HAL_OK)
-  // {
-  //   Error_Handler();
-  // }
+  if (HAL_DMA2D_ConfigLayer(&hdma2d, 1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN DMA2D_Init 2 */
 
   /* USER CODE END DMA2D_Init 2 */
@@ -377,19 +414,19 @@ static void MX_FMC_Init(void)
   hsdram1.Init.RowBitsNumber = FMC_SDRAM_ROW_BITS_NUM_12;
   hsdram1.Init.MemoryDataWidth = FMC_SDRAM_MEM_BUS_WIDTH_16;
   hsdram1.Init.InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4;
-  hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_1;
+  hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_3;
   hsdram1.Init.WriteProtection = FMC_SDRAM_WRITE_PROTECTION_DISABLE;
   hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_DISABLE;
   hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_DISABLE;
   hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_0;
   /* SdramTiming */
-  SdramTiming.LoadToActiveDelay = 16;
-  SdramTiming.ExitSelfRefreshDelay = 16;
-  SdramTiming.SelfRefreshTime = 16;
-  SdramTiming.RowCycleDelay = 16;
-  SdramTiming.WriteRecoveryTime = 16;
-  SdramTiming.RPDelay = 16;
-  SdramTiming.RCDDelay = 16;
+  SdramTiming.LoadToActiveDelay = 2;
+  SdramTiming.ExitSelfRefreshDelay = 7;
+  SdramTiming.SelfRefreshTime = 4;
+  SdramTiming.RowCycleDelay = 7;
+  SdramTiming.WriteRecoveryTime = 3;
+  SdramTiming.RPDelay = 2;
+  SdramTiming.RCDDelay = 2;
 
   if (HAL_SDRAM_Init(&hsdram1, &SdramTiming) != HAL_OK)
   {
