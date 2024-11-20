@@ -1,0 +1,131 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundImage",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\clay_theme_images_backgrounds_480x272_meteor_rain.png"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonPrevious",
+            "X": 13,
+            "Y": 118,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_icon_round_micro_outline_disabled.png",
+            "IconPressed": "__generated\\icon_theme_images_navigation_chevron_left_36_36_27292C.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_navigation_chevron_left_36_36_474B50.svg.png",
+            "IconHeight": 36,
+            "IconWidth": 36
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonNext",
+            "X": 433,
+            "Y": 118,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_icon_round_micro_outline_disabled.png",
+            "IconPressed": "__generated\\icon_theme_images_navigation_chevron_right_36_36_2F3134.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_navigation_chevron_right_36_36_474B50.svg.png",
+            "IconHeight": 36,
+            "IconWidth": 36
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "handleClickPrevious",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonPrevious"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleClickPrevious"
+            }
+          },
+          {
+            "InteractionName": "handleClickNext",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNext"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleClickNext"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "GFXImageDisplay",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "2.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "8": "LCD8bpp_ARGB2222",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommand": "",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash -j8",
+    "FlashTargetIntCommandOverride": "make -f ../gcc/Makefile intflash -j8",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.24.0",
+  "CreatedBy": "4.24.0"
+}

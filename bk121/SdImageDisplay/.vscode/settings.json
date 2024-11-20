@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.jj": "java",
+        "fatfs.h": "c",
+        "ff_gen_drv.h": "c",
+        "ff.h": "c"
+    }
+}
