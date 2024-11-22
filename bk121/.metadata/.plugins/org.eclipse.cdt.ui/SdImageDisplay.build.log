@@ -1,10 +1,10 @@
-19:19:52 **** Incremental Build of configuration Debug for project SdImageDisplay ****
+20:33:13 **** Incremental Build of configuration Debug for project SdImageDisplay ****
 make -j8 all 
 arm-none-eabi-size  SdImageDisplay.elf 
    text	   data	    bss	    dec	    hex	filename
-  28656	     12	   4348	  33016	   80f8	SdImageDisplay.elf
+  40180	     92	   5244	  45516	   b1cc	SdImageDisplay.elf
 Finished building: default.size.stdout
  
 
-19:19:52 Build Finished. 0 errors, 0 warnings. (took 298ms)
+20:33:13 Build Finished. 0 errors, 0 warnings. (took 565ms)
 
