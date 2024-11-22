@@ -1,0 +1,185 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "RelativeFilename": "bg.png",
+            "Alpha": 255,
+            "Name": "backgroundImage",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Alpha": 255,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 12,
+                "Y": 8,
+                "Style": "Icon6",
+                "IconReleased": "__designer\\blue_icons_back_arrow_48.png",
+                "IconPressed": "__designer\\blue_icons_back_arrow_48.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "X": 0,
+                "Y": 0,
+                "Width": 49,
+                "Height": 60,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 0,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 161,
+                  "Green": 161,
+                  "Blue": 161
+                },
+                "ColorBorderReleased": {
+                  "Red": 180,
+                  "Green": 180,
+                  "Blue": 180
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ],
+            "Name": "buttonPrev",
+            "X": 19,
+            "Y": 104,
+            "Width": 49,
+            "Height": 60,
+            "Type": "FlexButton",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "handleClickPrev",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonPrev",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "handleClickPrev",
+              "Type": "ActionCustom"
+            }
+          }
+        ],
+        "Name": "Main",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "TextEntries": [
+      {
+        "TextEntryId": "numberText",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "toggleButtonWhite",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "toggleButtonOrange",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId13",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId14",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId15",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId16",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId18",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId19",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId22",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "ipAddrText",
+        "IsResource": true
+      }
+    ],
+    "Name": "MyApplication5",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/TouchGFX/touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplate": {
+      "Name": "Simulator",
+      "Version": "2.0.0",
+      "Description": "STM32CubeMX Generated Simulator Application Template",
+      "AvailableColorDepths": [
+        24
+      ],
+      "AvailableImageFormats": {
+        "24": {
+          "Opaque": "RGB888",
+          "NonOpaque": "ARGB8888"
+        }
+      },
+      "AvailableResolutions": [
+        {
+          "Width": 480,
+          "Height": 272
+        }
+      ],
+      "PhysicalButtons": [],
+      "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
+      "PostGenerateCommand": "touchgfx update_project --project-file=../EWARM/MyApplication5.ewp --gui-group-name=Application/User/TouchGFX/gui --generated-group-name=Application/User/TouchGFX/generated && touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+      "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
+      "RunSimulatorCommand": "build\\bin\\simulator.exe",
+      "CompileTargetCommand": "make -f ../gcc/Makefile -j8",
+      "FlashTargetCommand": "make -f ../gcc/Makefile -j8 flash"
+    }
+  },
+  "Version": "4.10.0",
+  "CreatedBy": "4.10.0"
+}

@@ -52,8 +52,9 @@ build/MINGW32_NT-6.2/gui/src/main_screen/MainView.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  generated/images/include/images/BitmapDatabase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp \
  generated/images/include/BitmapDatabase.hpp
 
 gui/include/gui/main_screen/MainView.hpp:
@@ -160,8 +161,10 @@ gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
+generated/images/include/images/BitmapDatabase.hpp:
+
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
 
-generated/images/include/images/BitmapDatabase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp:
 
 generated/images/include/BitmapDatabase.hpp:

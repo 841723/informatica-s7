@@ -9,7 +9,7 @@
 #include <touchgfx/hal/OSWrappers.hpp>
 #include <touchgfx/Bitmap.hpp>
 
-#include "../../../../../Core/Inc/drv.h"
+// #include <drv.h>
 
 #define BMP_BUFFER_SIZE (1024 * 1024)
 
@@ -26,7 +26,6 @@ public:
 protected:
 
 private:
-    bool loadBitmapFromSD(const char* filePath, touchgfx::BitmapId& bmpId);
     void displayImage();
     touchgfx::TiledImage ImageDisplayed;
     

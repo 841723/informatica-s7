@@ -116,7 +116,7 @@ else
 imageconvert_executable := $(touchgfx_path)/framework/tools/imageconvert/build/win/imageconvert.out
 fontconvert_executable := $(touchgfx_path)/framework/tools/fontconvert/build/win/fontconvert.out
 
-stldr := W25Q128JVEIQ_STM32F746G-DISCO.stldr
+stldr := N25Q128A_STM32F746G-DISCO.stldr
 include $(application_path)/gcc/include/cube_programmer.mk
 
 endif
@@ -234,6 +234,7 @@ source_files := $(call find, $(source_paths),*.cpp)
 board_c_files :=
 
 board_c_files := \
+	$(Drivers_path)/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.c \
 	$(Drivers_path)/BSP/Components/ft5336/ft5336.c  \
 	Middlewares/Third_Party/LibJPEG/source/jaricom.c \
 	Middlewares/Third_Party/LibJPEG/source/jcomapi.c \

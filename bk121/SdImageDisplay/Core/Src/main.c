@@ -73,27 +73,6 @@ static void MX_FMC_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-void MPU_Init(void) {
-    MPU_Region_InitTypeDef MPU_InitStruct;
-
-    HAL_MPU_Disable();
-
-    MPU_InitStruct.Enable = MPU_REGION_ENABLE;
-    MPU_InitStruct.BaseAddress = FRAME_BUFFER_ADDRESS;
-    MPU_InitStruct.Size = MPU_REGION_SIZE_16MB;
-    MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
-    MPU_InitStruct.IsBufferable = MPU_ACCESS_NOT_BUFFERABLE;
-    MPU_InitStruct.IsCacheable = MPU_ACCESS_CACHEABLE;
-    MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
-    MPU_InitStruct.Number = MPU_REGION_NUMBER0;
-    MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
-    MPU_InitStruct.SubRegionDisable = 0x00;
-    MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_DISABLE;
-
-    HAL_MPU_ConfigRegion(&MPU_InitStruct);
-    HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
-}
-
 /* USER CODE END 0 */
 
 /**
@@ -104,8 +83,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	const int height = 240;
-	const int width = 320;
+	// const int height = 240;
+	// const int width = 320;
 
 //	char filenames[8][64];
 //
@@ -123,7 +102,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  uint8_t buff[100];
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -142,7 +121,7 @@ int main(void)
   MX_LTDC_Init();
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
-  FATFS_Init();
+  // FATFS_Init();
   // FATFS_Scan("", filenames);
 
   
@@ -154,17 +133,37 @@ int main(void)
 //    }
 //  }
 
-  uint16_t image[height * width]; // Ejemplo de una imagen en RGB565 (240x320)
+//  uint16_t image[height * width]; // Ejemplo de una imagen en RGB565 (240x320)
+//
+//  for (uint16_t y = 0; y < height; y++) {
+//	  for (uint16_t x = 0; x < width; x++) {
+//		  uint16_t color = (x * 31 / width) << 11; // Azul, con intensidad según la posición
+//		  image[y * width + x] = color;
+//	  }
+//  }
+//
+//  memset(image, 0xFFFF, sizeof(image)); // Imagen blanca
+//  Display_Image_DMA2D(image, 240, 320);
 
-  for (uint16_t y = 0; y < height; y++) {
-	  for (uint16_t x = 0; x < width; x++) {
-		  uint16_t color = (x * 31 / width) << 11; // Azul, con intensidad según la posición
-		  image[y * width + x] = color;
-	  }
+  FRESULT res = f_mount(&SDFatFS, SDPath, 0);
+  if (res == FR_OK)
+  {
+    res = f_open(&SDFile, "test.txt", FA_WRITE | FA_CREATE_ALWAYS);
+    if (res == FR_OK)
+    {
+      UINT byteswritten;
+      f_write(&SDFile, "Hello World!\r\n", 14, (void *)&byteswritten);
+      f_close(&SDFile);
+    }
+
+    res = f_open(&SDFile, "test.txt", FA_READ);
+    if (res == FR_OK)
+    {
+      UINT bytesread;
+      f_read(&SDFile, (void *)buff, sizeof(buff), (void *)&bytesread);
+      f_close(&SDFile);
+    }
   }
-
-  memset(image, 0xFFFF, sizeof(image)); // Imagen blanca
-  Display_Image_DMA2D(image, 240, 320);
 
   /* USER CODE END 2 */
 
@@ -363,7 +362,7 @@ static void MX_SDMMC1_SD_Init(void)
   hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
   hsd1.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
   hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
-  hsd1.Init.BusWide = SDMMC_BUS_WIDE_1B;
+  hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
   hsd1.Init.ClockDiv = 0;
   /* USER CODE BEGIN SDMMC1_Init 2 */
@@ -626,7 +625,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : uSD_Detect_Pin */
   GPIO_InitStruct.Pin = uSD_Detect_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(uSD_Detect_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LCD_BL_CTRL_Pin */

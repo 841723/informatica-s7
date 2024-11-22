@@ -6,6 +6,8 @@
 #ifndef DRV_H
 #define DRV_H
 
-#include "../../FATFS/App/fatfs.h"
+// #include "fatfs.h"
+
+void drv_init(void);
 
 #endif // DRV_H

@@ -1,0 +1,18 @@
+!SESSION 2024-11-20 17:16:22.010 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-20 17:16:41.505
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-20 17:16:41.517
+!MESSAGE Log4j2 initialized with config file C:\Users\diego\Desktop\unizar\informatica-s7\bk121\test1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-20 17:16:44.062
+!MESSAGE Started RMI Server, listening on port 41338
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-20 17:19:03.487
+!MESSAGE Indexed 'STM32F746G_DISCO' (99 sources, 232 headers) in 13 sec: 22,176 declarations; 109,509 references; 23 unresolved inclusions; 81 syntax errors; 1,083 unresolved names (0.82%)

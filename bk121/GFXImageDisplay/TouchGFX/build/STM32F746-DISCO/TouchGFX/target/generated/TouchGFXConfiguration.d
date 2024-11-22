@@ -62,8 +62,9 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/target/generated/TouchGFXConfiguration.o
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp \
  TouchGFX/generated/images/include/BitmapDatabase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
@@ -103,6 +104,8 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/target/generated/TouchGFXConfiguration.o
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
+ Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h \
+ Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 
@@ -230,9 +233,11 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
+TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
 
-TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp:
 
 TouchGFX/generated/images/include/BitmapDatabase.hpp:
 
@@ -317,6 +322,10 @@ Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
 
 Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
+
+Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h:
+
+Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h:
 
 Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 

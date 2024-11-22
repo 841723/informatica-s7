@@ -20,7 +20,7 @@ all clean assets:
 $(error Spaces not allowed in path)
 else
 
-ADDITIONAL_SOURCES := 
+ADDITIONAL_SOURCES :=
 ADDITIONAL_INCLUDE_PATHS := 
 ADDITIONAL_LIBRARY_PATHS := 
 ADDITIONAL_LIBRARIES :=

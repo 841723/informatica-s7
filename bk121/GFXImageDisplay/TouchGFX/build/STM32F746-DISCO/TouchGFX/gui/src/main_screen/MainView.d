@@ -52,8 +52,9 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/main_screen/MainView.o: \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp \
  TouchGFX/generated/images/include/BitmapDatabase.hpp
 
 TouchGFX/gui/include/gui/main_screen/MainView.hpp:
@@ -160,8 +161,10 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
+TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
 
-TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp:
 
 TouchGFX/generated/images/include/BitmapDatabase.hpp:
