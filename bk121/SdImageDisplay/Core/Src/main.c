@@ -22,9 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
-#include <fatfs_drv.h>
-#include <display.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,16 +80,6 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	// const int height = 240;
-	// const int width = 320;
-
-//	char filenames[8][64];
-//
-//  for (unsigned int i = 0; i<8 ;i++) {
-//    for (unsigned int j = 0; j<64 ;j++) {
-//      filenames[i][j] = 0;
-//    }
-//  }
 
   /* USER CODE END 1 */
 
@@ -116,38 +103,17 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_SDMMC1_SD_Init();
-  MX_FATFS_Init();
   MX_DMA2D_Init();
   MX_LTDC_Init();
   MX_FMC_Init();
+  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
-  // FATFS_Init();
-  // FATFS_Scan("", filenames);
-
   
-//  uint8_t image_buffer[IMAGE_SIZE];
-//
-//  if (FATFS_Read_Image_From_SD("a.bmp", image_buffer) == FR_OK) {
-//    if (Display_Image_DMA2D((uint16_t*)image_buffer, IMAGE_WIDTH, IMAGE_HEIGHT) != HAL_OK) {
-//      Error_Handler();
-//    }
-//  }
-
-//  uint16_t image[height * width]; // Ejemplo de una imagen en RGB565 (240x320)
-//
-//  for (uint16_t y = 0; y < height; y++) {
-//	  for (uint16_t x = 0; x < width; x++) {
-//		  uint16_t color = (x * 31 / width) << 11; // Azul, con intensidad según la posición
-//		  image[y * width + x] = color;
-//	  }
-//  }
-//
-//  memset(image, 0xFFFF, sizeof(image)); // Imagen blanca
-//  Display_Image_DMA2D(image, 240, 320);
 
   FRESULT res = f_mount(&SDFatFS, SDPath, 0);
   if (res == FR_OK)
   {
+
     res = f_open(&SDFile, "test.txt", FA_WRITE | FA_CREATE_ALWAYS);
     if (res == FR_OK)
     {
@@ -362,11 +328,10 @@ static void MX_SDMMC1_SD_Init(void)
   hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
   hsd1.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
   hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
-  hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
+  hsd1.Init.BusWide = SDMMC_BUS_WIDE_1B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
   hsd1.Init.ClockDiv = 0;
   /* USER CODE BEGIN SDMMC1_Init 2 */
-
   /* USER CODE END SDMMC1_Init 2 */
 
 }

@@ -110,6 +110,20 @@ int main(void)
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
 
+  FRESULT res = f_mount(&SDFatFS, SDPath, 0);
+  if (res == FR_OK)
+  {
+
+
+    res = f_open(&SDFile, "a.bmp", FA_READ);
+    if (res == FR_OK)
+    {
+      UINT bytesread;
+      f_read(&SDFile, (void *)buff, sizeof(buff), (void *)&bytesread);
+      f_close(&SDFile);
+    }
+  }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
