@@ -1,0 +1,13 @@
+/*
+ * BSP_aux.h
+ *
+ *  Created on: Nov 24, 2024
+ *      Author: diego
+ */
+
+#ifndef INC_BSP_AUX_H_
+#define INC_BSP_AUX_H_
+
+void BSP_DisplayImage(char* path);
+
+#endif /* INC_BSP_AUX_H_ */

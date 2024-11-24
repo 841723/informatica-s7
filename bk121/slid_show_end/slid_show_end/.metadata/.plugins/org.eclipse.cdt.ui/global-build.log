@@ -1,0 +1,34 @@
+23:29:44 **** Incremental Build of configuration Debug for project slid ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/BSP_aux.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"../Gui files" -I../FATFS -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BSP_aux.d" -MT"Core/Src/BSP_aux.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BSP_aux.o"
+../Core/Src/BSP_aux.c: In function 'BSP_DisplayImage':
+../Core/Src/BSP_aux.c:21:9: warning: implicit declaration of function 'BSP_LCD_SetTransparency' [-Wimplicit-function-declaration]
+   21 |         BSP_LCD_SetTransparency(lastLayer,0);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/BSP_aux.c:27:9: warning: implicit declaration of function 'Storage_OpenReadFile' [-Wimplicit-function-declaration]
+   27 |         Storage_OpenReadFile(uwInternelBuffer, (const char*)path);
+      |         ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/BSP_aux.c:29:9: warning: implicit declaration of function 'BSP_LCD_SelectLayer' [-Wimplicit-function-declaration]
+   29 |         BSP_LCD_SelectLayer(lastLayer);
+      |         ^~~~~~~~~~~~~~~~~~~
+../Core/Src/BSP_aux.c:30:9: warning: implicit declaration of function 'BSP_LCD_DrawBitmap' [-Wimplicit-function-declaration]
+   30 |         BSP_LCD_DrawBitmap(0, 0, uwInternelBuffer);
+      |         ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "slid.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\diego\Desktop\unizar\informatica-s7\bk121\slid_show_end\slid_show_end\slid\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="slid.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: slid.elf
+ 
+arm-none-eabi-size  slid.elf 
+arm-none-eabi-objdump -h -S slid.elf  > "slid.list"
+   text	   data	    bss	    dec	    hex	filename
+  48812	    120	   4800	  53732	   d1e4	slid.elf
+Finished building: default.size.stdout
+ 
+Finished building: slid.list
+ 
+23:29:49 **** Incremental Build of configuration Debug for project slid ****
+make -j8 all 
+arm-none-eabi-size  slid.elf 
+   text	   data	    bss	    dec	    hex	filename
+  48812	    120	   4800	  53732	   d1e4	slid.elf
+Finished building: default.size.stdout
+ 

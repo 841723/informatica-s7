@@ -1,0 +1,10 @@
+23:29:49 **** Incremental Build of configuration Debug for project slid ****
+make -j8 all 
+arm-none-eabi-size  slid.elf 
+   text	   data	    bss	    dec	    hex	filename
+  48812	    120	   4800	  53732	   d1e4	slid.elf
+Finished building: default.size.stdout
+ 
+
+23:29:49 Build Finished. 0 errors, 0 warnings. (took 592ms)
+
