@@ -31,6 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "../../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -383,7 +384,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 
-#define FRAME_BUFFER_ADDRESS 0xC0000000
+#define FRAMEBUFFER_ADDR   0xC0000000
 #define IMAGE_WIDTH 240
 #define IMAGE_HEIGHT 320
 #define IMAGE_SIZE (IMAGE_WIDTH * IMAGE_HEIGHT * 2)  // Para RGB565

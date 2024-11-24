@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "display.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,15 +61,37 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_SDMMC1_SD_Init(void);
+static void MX_FMC_Init(void);
 static void MX_DMA2D_Init(void);
 static void MX_LTDC_Init(void);
-static void MX_FMC_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+//
+void MPU_Config(void) {
+    MPU_Region_InitTypeDef MPU_InitStruct;
+
+    HAL_MPU_Disable();
+
+    MPU_InitStruct.Enable = MPU_REGION_ENABLE;
+    MPU_InitStruct.BaseAddress = 0xC0000000;  // Dirección base SDRAM
+    MPU_InitStruct.Size = MPU_REGION_SIZE_8MB; // Tamaño de la SDRAM
+    MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+    MPU_InitStruct.IsBufferable = MPU_ACCESS_NOT_BUFFERABLE;
+    MPU_InitStruct.IsCacheable = MPU_ACCESS_CACHEABLE;
+    MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
+    MPU_InitStruct.Number = MPU_REGION_NUMBER0;
+    MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+    MPU_InitStruct.SubRegionDisable = 0x00;
+    MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_DISABLE;
+
+    HAL_MPU_ConfigRegion(&MPU_InitStruct);
+
+    HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+}
 
 /* USER CODE END 0 */
 
@@ -80,7 +103,6 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -89,13 +111,15 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  uint8_t buff[100];
+//  uint8_t res_user = 0;
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  MPU_Config();
+  BSP_SDRAM_Init();
 
   /* USER CODE END SysInit */
 
@@ -103,33 +127,73 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_SDMMC1_SD_Init();
+  MX_FATFS_Init();
   MX_DMA2D_Init();
   MX_LTDC_Init();
   MX_FMC_Init();
-  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
   
 
-  FRESULT res = f_mount(&SDFatFS, SDPath, 0);
-  if (res == FR_OK)
-  {
+//  LTDC_LayerCfgTypeDef LayerConfig;
+//  HAL_LTDC_ConfigLayer(&hltdc, &LayerConfig, 0); // Configura la capa
 
-    res = f_open(&SDFile, "test.txt", FA_WRITE | FA_CREATE_ALWAYS);
-    if (res == FR_OK)
-    {
-      UINT byteswritten;
-      f_write(&SDFile, "Hello World!\r\n", 14, (void *)&byteswritten);
-      f_close(&SDFile);
-    }
 
-    res = f_open(&SDFile, "test.txt", FA_READ);
-    if (res == FR_OK)
-    {
-      UINT bytesread;
-      f_read(&SDFile, (void *)buff, sizeof(buff), (void *)&bytesread);
-      f_close(&SDFile);
-    }
-  }
+  *((volatile uint32_t*)0xC0000000) = 0x12345678;
+  uint32_t value = *((volatile uint32_t*)FRAMEBUFFER_ADDR);
+  value += 1;
+
+//  FMC_SDRAM_CommandTypeDef command;
+//  HAL_SDRAM_Init(&hsdram1, &SDRAM_Timing);
+//  Test_SDRAM();
+//
+//  FRESULT res = f_mount(&SDFatFS, SDPath, 0);
+//  if (res == FR_OK)
+//  {
+//
+//    res = f_open(&SDFile, "a.bmp", FA_READ);
+//    if (res == FR_OK)
+//    {
+//      UINT bytesread;
+//      uint8_t* framebuffer = (uint8_t*)FRAMEBUFFER_ADDR;
+//      uint8_t bmpHeader[54];
+//
+//      f_read(&SDFile, bmpHeader, sizeof(bmpHeader), &bytesread);
+//
+//      uint32_t imageSize = *(uint32_t*)&bmpHeader[34];
+//
+//      f_read(&SDFile, framebuffer, imageSize, &bytesread);
+//      f_close(&SDFile);
+//
+//      HAL_LTDC_Reload(&hltdc, LTDC_RELOAD_IMMEDIATE);
+//    }
+//  }
+
+#define SCREEN_HEIGHT 272
+#define SCREEN_WIDTH 480
+#define GREEN_COLOR 0x00FF00
+
+
+  // Dirección del framebuffer en SDRAM
+      uint32_t *framebuffer = (uint32_t*)FRAMEBUFFER_ADDR;
+
+      // Color verde en formato ARGB8888
+      uint32_t greenColor = 0xFF00FF00; // Alpha (FF), Rojo (00), Verde (FF), Azul (00)
+
+      // Configura la transferencia con DMA2D
+      if (HAL_DMA2D_Start(&hdma2d, greenColor, (uint32_t)framebuffer, 480, 272) == HAL_OK)
+      {
+          // Espera a que termine la operación
+    	  HAL_StatusTypeDef res = HAL_DMA2D_PollForTransfer(&hdma2d, 1000);
+    	  if (res != HAL_OK) {
+    		  while(1);
+    	  }
+      }
+      else
+      {
+          Error_Handler(); // Manejo de errores en caso de fallo
+      }
+
+
 
   /* USER CODE END 2 */
 
@@ -167,9 +231,9 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 50;
+  RCC_OscInitStruct.PLL.PLLN = 100;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -181,10 +245,10 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV16;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV8;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -207,10 +271,10 @@ static void MX_DMA2D_Init(void)
   /* USER CODE END DMA2D_Init 1 */
   hdma2d.Instance = DMA2D;
   hdma2d.Init.Mode = DMA2D_M2M;
-  hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB565;
+  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB8888;
   hdma2d.Init.OutputOffset = 0;
   hdma2d.LayerCfg[1].InputOffset = 0;
-  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_RGB565;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB8888;
   hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
   hdma2d.LayerCfg[1].InputAlpha = 0;
   if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
@@ -382,7 +446,7 @@ static void MX_FMC_Init(void)
   hsdram1.Init.WriteProtection = FMC_SDRAM_WRITE_PROTECTION_DISABLE;
   hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_DISABLE;
   hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_DISABLE;
-  hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_0;
+  hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_2;
   /* SdramTiming */
   SdramTiming.LoadToActiveDelay = 2;
   SdramTiming.ExitSelfRefreshDelay = 7;

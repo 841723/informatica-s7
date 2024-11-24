@@ -36,6 +36,7 @@ FATFS/Target/sd_diskio.o: ../FATFS/Target/sd_diskio.c \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h \
+ ../Drivers/STM32F7xx_HAL_Driver/Inc/../../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.h \
  ../FATFS/Target/bsp_driver_sd.h ../FATFS/Target/fatfs_platform.h \
  ../FATFS/Target/sd_diskio.h
 ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
@@ -77,6 +78,7 @@ FATFS/Target/sd_diskio.o: ../FATFS/Target/sd_diskio.c \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h:
+../Drivers/STM32F7xx_HAL_Driver/Inc/../../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.h:
 ../FATFS/Target/bsp_driver_sd.h:
 ../FATFS/Target/fatfs_platform.h:
 ../FATFS/Target/sd_diskio.h:
