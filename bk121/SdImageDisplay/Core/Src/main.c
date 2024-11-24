@@ -111,7 +111,6 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-//  uint8_t res_user = 0;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -127,10 +126,10 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_SDMMC1_SD_Init();
+  MX_FMC_Init();
   MX_FATFS_Init();
   MX_DMA2D_Init();
   MX_LTDC_Init();
-  MX_FMC_Init();
   /* USER CODE BEGIN 2 */
   
 
@@ -142,57 +141,25 @@ int main(void)
   uint32_t value = *((volatile uint32_t*)FRAMEBUFFER_ADDR);
   value += 1;
 
-//  FMC_SDRAM_CommandTypeDef command;
-//  HAL_SDRAM_Init(&hsdram1, &SDRAM_Timing);
-//  Test_SDRAM();
-//
-//  FRESULT res = f_mount(&SDFatFS, SDPath, 0);
-//  if (res == FR_OK)
-//  {
-//
-//    res = f_open(&SDFile, "a.bmp", FA_READ);
-//    if (res == FR_OK)
-//    {
-//      UINT bytesread;
-//      uint8_t* framebuffer = (uint8_t*)FRAMEBUFFER_ADDR;
-//      uint8_t bmpHeader[54];
-//
-//      f_read(&SDFile, bmpHeader, sizeof(bmpHeader), &bytesread);
-//
-//      uint32_t imageSize = *(uint32_t*)&bmpHeader[34];
-//
-//      f_read(&SDFile, framebuffer, imageSize, &bytesread);
-//      f_close(&SDFile);
-//
-//      HAL_LTDC_Reload(&hltdc, LTDC_RELOAD_IMMEDIATE);
-//    }
-//  }
-
 #define SCREEN_HEIGHT 272
 #define SCREEN_WIDTH 480
-#define GREEN_COLOR 0x00FF00
+  __HAL_LTDC_LAYER_ENABLE(&hltdc, 0);
+  HAL_LTDC_Reload(&hltdc, LTDC_RELOAD_IMMEDIATE);
 
+  uint8_t *framebuffer = (uint8_t *)FRAMEBUFFER_ADDR;
 
-  // Dirección del framebuffer en SDRAM
-      uint32_t *framebuffer = (uint32_t*)FRAMEBUFFER_ADDR;
+      for (uint32_t y = 0; y < SCREEN_HEIGHT; y++) {
+          for (uint32_t x = 0; x < SCREEN_WIDTH; x++) {
+              uint32_t pixel_index = (y * SCREEN_WIDTH + x) * 3; // Cada píxel ocupa 3 bytes (RGB888)
 
-      // Color verde en formato ARGB8888
-      uint32_t greenColor = 0xFF00FF00; // Alpha (FF), Rojo (00), Verde (FF), Azul (00)
-
-      // Configura la transferencia con DMA2D
-      if (HAL_DMA2D_Start(&hdma2d, greenColor, (uint32_t)framebuffer, 480, 272) == HAL_OK)
-      {
-          // Espera a que termine la operación
-    	  HAL_StatusTypeDef res = HAL_DMA2D_PollForTransfer(&hdma2d, 1000);
-    	  if (res != HAL_OK) {
-    		  while(1);
-    	  }
-      }
-      else
-      {
-          Error_Handler(); // Manejo de errores en caso de fallo
+              framebuffer[pixel_index + 0] = 0x00; // Componente azul (Blue)
+              framebuffer[pixel_index + 1] = 0xFF; // Componente verde (Green)
+              framebuffer[pixel_index + 2] = 0x00; // Componente rojo (Red)
+          }
       }
 
+      __HAL_LTDC_LAYER_ENABLE(&hltdc, 0);
+      HAL_LTDC_Reload(&hltdc, LTDC_RELOAD_IMMEDIATE);
 
 
   /* USER CODE END 2 */
@@ -271,10 +238,10 @@ static void MX_DMA2D_Init(void)
   /* USER CODE END DMA2D_Init 1 */
   hdma2d.Instance = DMA2D;
   hdma2d.Init.Mode = DMA2D_M2M;
-  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB8888;
+  hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB888;
   hdma2d.Init.OutputOffset = 0;
   hdma2d.LayerCfg[1].InputOffset = 0;
-  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB8888;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_OUTPUT_RGB888;
   hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
   hdma2d.LayerCfg[1].InputAlpha = 0;
   if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
@@ -304,7 +271,6 @@ static void MX_LTDC_Init(void)
   /* USER CODE END LTDC_Init 0 */
 
   LTDC_LayerCfgTypeDef pLayerCfg = {0};
-  LTDC_LayerCfgTypeDef pLayerCfg1 = {0};
 
   /* USER CODE BEGIN LTDC_Init 1 */
 
@@ -330,40 +296,21 @@ static void MX_LTDC_Init(void)
     Error_Handler();
   }
   pLayerCfg.WindowX0 = 0;
-  pLayerCfg.WindowX1 = 0;
+  pLayerCfg.WindowX1 = 480;
   pLayerCfg.WindowY0 = 0;
-  pLayerCfg.WindowY1 = 0;
-  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_ARGB8888;
+  pLayerCfg.WindowY1 = 272;
+  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_RGB888;
   pLayerCfg.Alpha = 0;
   pLayerCfg.Alpha0 = 0;
   pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
   pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
-  pLayerCfg.FBStartAdress = 0;
-  pLayerCfg.ImageWidth = 0;
-  pLayerCfg.ImageHeight = 0;
+  pLayerCfg.FBStartAdress = FRAMEBUFFER_ADDR;
+  pLayerCfg.ImageWidth = SCREEN_WIDTH;
+  pLayerCfg.ImageHeight = SCREEN_HEIGHT;
   pLayerCfg.Backcolor.Blue = 0;
   pLayerCfg.Backcolor.Green = 0;
   pLayerCfg.Backcolor.Red = 0;
   if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  pLayerCfg1.WindowX0 = 0;
-  pLayerCfg1.WindowX1 = 0;
-  pLayerCfg1.WindowY0 = 0;
-  pLayerCfg1.WindowY1 = 0;
-  pLayerCfg1.PixelFormat = LTDC_PIXEL_FORMAT_ARGB8888;
-  pLayerCfg1.Alpha = 0;
-  pLayerCfg1.Alpha0 = 0;
-  pLayerCfg1.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
-  pLayerCfg1.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
-  pLayerCfg1.FBStartAdress = 0;
-  pLayerCfg1.ImageWidth = 0;
-  pLayerCfg1.ImageHeight = 0;
-  pLayerCfg1.Backcolor.Blue = 0;
-  pLayerCfg1.Backcolor.Green = 0;
-  pLayerCfg1.Backcolor.Red = 0;
-  if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg1, 1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -444,7 +391,7 @@ static void MX_FMC_Init(void)
   hsdram1.Init.InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4;
   hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_3;
   hsdram1.Init.WriteProtection = FMC_SDRAM_WRITE_PROTECTION_DISABLE;
-  hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_DISABLE;
+  hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_PERIOD_2;
   hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_DISABLE;
   hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_2;
   /* SdramTiming */
