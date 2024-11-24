@@ -1,4 +1,6 @@
-# Debian (Linux)
+# DOCS
+
+## Debian (Linux)
 
 -   Configure the network in `/etc/network/interfaces`:
 
@@ -275,7 +277,7 @@
 
         -   run `ufw allow 51820/udp`
 
-# Windows
+## Windows
 
 -   Configure the network:
 
@@ -397,3 +399,93 @@
             User name: vpn
             Password: NSSisgreat1
             ```
+
+
+
+# Check of Lab Tasks 2, 3, 4, 5
+
+## lab task 2
+
+### windows
+
+- wait a few minutes and connect to https://www.nssfh.com
+
+    - issued to: `www.nssfh.com`
+
+
+## lab task 3
+
+### windows
+
+#### sstp vpn
+
+- settings 
+
+- network and internet
+
+- vpn 
+
+- connect to `sstp vpn 2` if connexion is with password, if not create a new connexion with the following settings:
+
+    - VPN provider: Windows (built-in)
+    - Connection name: SSTP VPN
+    - Server name: www.nssfh.com
+    - VPN type: Secure Socket Tunneling Protocol (SSTP)
+    - Type of sign-in info: User name and password
+    - User name: vpn
+    - Password: NSSisgreat1
+
+- ping
+
+
+#### wireguard vpn
+
+- disconnect from sstp vpn
+
+- search wireguard
+
+- activate the tunnel 
+
+- ping
+
+
+### linux
+
+#### pptp vpn
+
+- ping 
+
+#### wireguard vpn
+
+- ping
+
+## lab task 4
+
+`./task-4-nss.pdf` 
+
+[here](https://github.com/841723/informatica-s7/blob/35f240003fbe3cab2a9c8d7e0197ceb70813ede2/nss/task-4-nss.pdf)
+
+## lab task 5
+
+### wordpress docker
+
+- open docker desktop app
+
+- `cd task-5`
+
+- `docker compose up`
+
+- open browser and go to [wordpress](http://localhost:8080)
+- open browser and go to [phpmyadmin](http://localhost:8282)
+
+### my application docker
+
+change directory to wikiplace
+
+- `code "C:\Users\diego\Desktop\unizar\tfg\wikiplace"`
+
+- `docker compose up`
+
+- open browser and go to [web application](http://localhost)
+
+this will run the Dockerfile in the build/context directory
