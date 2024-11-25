@@ -1,0 +1,19 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/service.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "linux": "tsc; node src/service.js; rm src/*.js; rm src/interpreter_src/*.js",
+    "clean": "rm src/*.js; rm src/interpreter_src/*.js" 
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.12"
+  }
+}
