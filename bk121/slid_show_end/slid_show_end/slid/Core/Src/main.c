@@ -27,6 +27,8 @@ char* pDirectoryFiles[MAX_BMP_FILES];
 uint8_t  ubNumberOfFiles = 0;
 uint32_t uwBmplen = 0;
 uint8_t *uwInternelBuffer;
+
+TS_StateTypeDef *TS_State;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,31 +110,24 @@ int main(void)
   MX_CRC_Init();
   MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
+    BSP_TS_Init(480,272);
     BSP_LCD_Init();
 
     /* LCD Initialization */
     BSP_LCD_LayerDefaultInit(0, LCD_FB_START_ADDRESS);
-    BSP_LCD_LayerDefaultInit(1, LCD_FB_START_ADDRESS+(BSP_LCD_GetXSize()*BSP_LCD_GetYSize()*4));
 
     /* Enable the LCD */
     BSP_LCD_DisplayOn();
 
-    /* Select the LCD Background Layer  */
+    /* Select the LCD  Layer  */
     BSP_LCD_SelectLayer(0);
 
-    /* Clear the Background Layer */
-    BSP_LCD_Clear(LCD_COLOR_BLACK);
-
-    /* Select the LCD Foreground Layer  */
-    BSP_LCD_SelectLayer(1);
-
-    /* Clear the Foreground Layer */
+    /* Clear the Layer */
     BSP_LCD_Clear(LCD_COLOR_BLACK);
 
     /* Configure the transparency for foreground and background :
        Increase the transparency */
     BSP_LCD_SetTransparency(0, 0);
-    BSP_LCD_SetTransparency(1, 100);
 
     BSP_SD_Init();
 
@@ -185,10 +180,6 @@ int main(void)
       Error_Handler();
     }
 
-    BSP_LCD_SelectLayer(1);
-	BSP_LCD_Clear(0);
-    BSP_DisplayButtons();
-
     /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -199,22 +190,41 @@ int main(void)
 
 	  	    do
 	  	    {
-			sprintf ((char*)str, "/%-11.11s", pDirectoryFiles[counter]);
+			sprintf ((char*)str, "/%-28.28s", pDirectoryFiles[counter]);
 	  	      if (Storage_CheckBitmapFile((const char*)str, &uwBmplen) == 0)
 	  	      {
 	  	      BSP_DisplayImage(counter,pDirectoryFiles,ubNumberOfFiles);
 
-	  	        /* Wait for tamper button pressed */
-	  	        while (BSP_PB_GetState(BUTTON_TAMPER) == RESET)
+	  	        /* Wait for screen touch */
+	  	        while (1)
 	  	        {
+	  	        	if (BSP_TS_GetState(TS_State) != TS_OK)
+	  	        	{
+	  	        		Error_Handler();
+	  	        	}
+	  	        	else
+	  	        	{
+	  	        		if (TS_State->touchDetected == 1)
+	  	        		{
+	  	        			counter += ubNumberOfFiles;
+	  	        			if (TS_State->touchX[0] > 480/2)
+	  	        			{
+	  	        				counter++;
+	  	        			}
+	  	        			else {
+	  	        				counter--;
+	  	        			}
+	  	        			break;
+	  	        		}
+	  	        	}
 	  	        }
 
-	  	        counter++;
 	  	        counter %= ubNumberOfFiles;
 
 	  	      }
 				else
 				{
+				  BSP_LCD_Clear(((uint32_t)0xFF000000));
 				  /* Set the Text Color */
 				  BSP_LCD_SetTextColor(LCD_COLOR_RED);
 

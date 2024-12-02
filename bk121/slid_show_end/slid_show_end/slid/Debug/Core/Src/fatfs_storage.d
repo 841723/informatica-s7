@@ -40,11 +40,11 @@ Core/Src/fatfs_storage.o: ../Core/Src/fatfs_storage.c \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
  ../Gui\ files/stm32746g_discovery.h \
  ../Gui\ files/stm32746g_discovery_sdram.h \
- ../Gui\ files/stm32746g_discovery_ts.h \
- ../Gui\ files/stm32746g_discovery.h ../Gui\ files/ft5336.h \
- ../Gui\ files/ts.h ../Gui\ files/stm32746g_discovery_lcd.h \
- ../Gui\ files/rk043fn48h.h ../Gui\ files/stm32746g_discovery_sdram.h \
- ../Gui\ files/fonts.h ../Core/Inc/fatfs_storage.h ../FATFS/ff_gen_drv.h \
+ ../Gui\ files/stm32746g_discovery_lcd.h ../Gui\ files/rk043fn48h.h \
+ ../Gui\ files/stm32746g_discovery_sdram.h \
+ ../Gui\ files/stm32746g_discovery.h ../Gui\ files/fonts.h \
+ ../Gui\ files/stm32746g_discovery_ts.h ../Gui\ files/ft5336.h \
+ ../Gui\ files/ts.h ../Core/Inc/fatfs_storage.h ../FATFS/ff_gen_drv.h \
  ../FATFS/diskio.h ../FATFS/ff.h ../Core/Inc/sd_diskio.h \
  ../Gui\ files/stm32746g_discovery_sd.h ../Core/Inc/BSP_aux.h
 ../Core/Inc/fatfs_storage.h:
@@ -91,14 +91,14 @@ Core/Src/fatfs_storage.o: ../Core/Src/fatfs_storage.c \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
 ../Gui\ files/stm32746g_discovery.h:
 ../Gui\ files/stm32746g_discovery_sdram.h:
-../Gui\ files/stm32746g_discovery_ts.h:
-../Gui\ files/stm32746g_discovery.h:
-../Gui\ files/ft5336.h:
-../Gui\ files/ts.h:
 ../Gui\ files/stm32746g_discovery_lcd.h:
 ../Gui\ files/rk043fn48h.h:
 ../Gui\ files/stm32746g_discovery_sdram.h:
+../Gui\ files/stm32746g_discovery.h:
 ../Gui\ files/fonts.h:
+../Gui\ files/stm32746g_discovery_ts.h:
+../Gui\ files/ft5336.h:
+../Gui\ files/ts.h:
 ../Core/Inc/fatfs_storage.h:
 ../FATFS/ff_gen_drv.h:
 ../FATFS/diskio.h:
