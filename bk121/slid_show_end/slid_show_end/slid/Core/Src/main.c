@@ -185,6 +185,10 @@ int main(void)
       Error_Handler();
     }
 
+    BSP_LCD_SelectLayer(1);
+	BSP_LCD_Clear(0);
+    BSP_DisplayButtons();
+
     /* USER CODE END 2 */
 
   /* Infinite loop */
