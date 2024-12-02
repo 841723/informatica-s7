@@ -195,14 +195,10 @@ int main(void)
 
 	  	    do
 	  	    {
-	  	      /* Step1 : Display on Foreground layer -------------------------------*/
-	  	      /* Format the string */
-	  	      sprintf ((char*)str, "/%-11.11s", pDirectoryFiles[counter]);
-
+			sprintf ((char*)str, "/%-11.11s", pDirectoryFiles[counter]);
 	  	      if (Storage_CheckBitmapFile((const char*)str, &uwBmplen) == 0)
 	  	      {
 	  	        /* Format the string */
-	  	        sprintf ((char*)str, "/%-11.11s", pDirectoryFiles[counter]);
 
 	  	        /* Set LCD foreground Layer */
 
@@ -232,14 +228,14 @@ int main(void)
 //	  	          /* Insert a delay of display */
 //	  	          HAL_Delay(2);
 //	  	        }
-	  	        BSP_LCD_SetTransparency(1, 0);
-
-	  	        /* Clear the Foreground Layer */
-	  	        BSP_LCD_Clear(LCD_COLOR_BLACK);
+//	  	        BSP_LCD_SetTransparency(1, 0);
+//
+//	  	        /* Clear the Foreground Layer */
+//	  	        BSP_LCD_Clear(LCD_COLOR_BLACK);
 
 	  	        /* Jump to the next image */
 	  	        counter++;
-
+	  	        counter %= ubNumberOfFiles;
 
 	  	      }
 				else
@@ -251,7 +247,7 @@ int main(void)
 				  BSP_LCD_DisplayStringAtLine(8, (uint8_t*)"    File type not supported. ");
 				  while(1);
 				}
-	  	    } while (counter < ubNumberOfFiles);
+	  	    } while (1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
