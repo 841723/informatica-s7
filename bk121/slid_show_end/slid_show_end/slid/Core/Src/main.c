@@ -198,42 +198,13 @@ int main(void)
 			sprintf ((char*)str, "/%-11.11s", pDirectoryFiles[counter]);
 	  	      if (Storage_CheckBitmapFile((const char*)str, &uwBmplen) == 0)
 	  	      {
-	  	        /* Format the string */
-
-	  	        /* Set LCD foreground Layer */
-
-
 	  	      BSP_DisplayImage(counter,pDirectoryFiles,ubNumberOfFiles);
-
-//	  	        /* Configure the transparency for background layer : Increase the transparency */
-//	  	        for (transparency = 0; transparency < 255; (transparency++))
-//	  	        {
-//	  	          BSP_LCD_SetTransparency(1, transparency);
-//
-//	  	          /* Insert a delay of display */
-//	  	          HAL_Delay(2);
-//	  	        }
-
 
 	  	        /* Wait for tamper button pressed */
 	  	        while (BSP_PB_GetState(BUTTON_TAMPER) == RESET)
 	  	        {
 	  	        }
 
-//	  	        /* Configure the transparency for foreground layer : decrease the transparency */
-//	  	        for (transparency = 255; transparency > 0; transparency--)
-//	  	        {
-//	  	          BSP_LCD_SetTransparency(1, transparency);
-//
-//	  	          /* Insert a delay of display */
-//	  	          HAL_Delay(2);
-//	  	        }
-//	  	        BSP_LCD_SetTransparency(1, 0);
-//
-//	  	        /* Clear the Foreground Layer */
-//	  	        BSP_LCD_Clear(LCD_COLOR_BLACK);
-
-	  	        /* Jump to the next image */
 	  	        counter++;
 	  	        counter %= ubNumberOfFiles;
 
