@@ -1,0 +1,9 @@
+@if ( stateService.isConnected) {
+   <h1>{{ _title }}</h1>
+}
+<ul>
+@for (iMess of messages; track iMess) {
+   <li>{{iMess.response}}</li>
+}
+</ul>
+

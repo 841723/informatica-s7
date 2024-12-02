@@ -1,0 +1,6 @@
+@if (!stateService.isConnected) {
+  <app-connect-form></app-connect-form>
+} @else {
+  <app-message-form></app-message-form>
+}
+<app-message-list [messages]="stateService.Messages"></app-message-list>

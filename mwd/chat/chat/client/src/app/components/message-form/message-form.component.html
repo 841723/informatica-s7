@@ -1,0 +1,9 @@
+<form>
+   <input name="message" [(ngModel)]="message" />
+   <button type="submit"
+   (click)="send()">send</button>
+   @if ( stateService.isConnected)
+   {
+      <div>connected</div>
+   }
+</form>
