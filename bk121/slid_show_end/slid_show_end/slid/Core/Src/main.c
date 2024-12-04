@@ -24,7 +24,7 @@
 FATFS SD_FatFs;  /* File system object for SD card logical drive */
 char SD_Path[4]; /* SD card logical drive path */
 char* pDirectoryFiles[MAX_BMP_FILES];
-uint8_t  ubNumberOfFiles = 0;
+uint8_t  nFiles = 0;
 uint32_t uwBmplen = 0;
 uint8_t *uwInternelBuffer;
 
@@ -80,8 +80,9 @@ int main(void)
 {
 
 	/* USER CODE BEGIN 1 */
-	  uint32_t counter = 0, transparency = 0;
-	  uint8_t str[30];
+	  uint32_t counter = 0;
+
+	  uint8_t str[30], displayFilename = 1;
 	  uwInternelBuffer = (uint8_t *)0xC0260000;
 	/* Enable I-Cache */
 	SCB_EnableICache();
@@ -110,7 +111,7 @@ int main(void)
   MX_CRC_Init();
   MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
-    BSP_TS_Init(480,272);
+    BSP_TS_Init(BSP_LCD_GetXSize(),BSP_LCD_GetYSize());
     BSP_LCD_Init();
 
     /* LCD Initialization */
@@ -125,9 +126,10 @@ int main(void)
     /* Clear the Layer */
     BSP_LCD_Clear(LCD_COLOR_BLACK);
 
+
     /* Configure the transparency for foreground and background :
        Increase the transparency */
-    BSP_LCD_SetTransparency(0, 0);
+    BSP_LCD_SetTransparency(0, 255);
 
     BSP_SD_Init();
 
@@ -137,7 +139,6 @@ int main(void)
           BSP_LCD_DisplayStringAtLine(8, (uint8_t*)"  Please insert SD Card                  ");
     }
 
-    BSP_LCD_Clear(LCD_COLOR_BLACK);
 
     /*##-2- Link the SD Card disk I/O driver ###################################*/
     if(FATFS_LinkDriver(&SD_Driver, SD_Path) == 0)
@@ -160,9 +161,9 @@ int main(void)
       }
 
       /* Get the BMP file names on root directory */
-      ubNumberOfFiles = Storage_GetDirectoryBitmapFiles("/", pDirectoryFiles);
+      nFiles = Storage_GetDirectoryBitmapFiles("/", pDirectoryFiles);
 
-      if (ubNumberOfFiles == 0)
+      if (nFiles == 0)
       {
         for (counter = 0; counter < MAX_BMP_FILES; counter++)
         {
@@ -184,61 +185,64 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-	  	    counter = 0;
+	counter = 0;
 
-	  	    do
-	  	    {
-			sprintf ((char*)str, "/%-28.28s", pDirectoryFiles[counter]);
-	  	      if (Storage_CheckBitmapFile((const char*)str, &uwBmplen) == 0)
-	  	      {
-	  	      BSP_DisplayImage(counter,pDirectoryFiles,ubNumberOfFiles);
+	while (1);
+	{
+		sprintf ((char*)str, "/%-28.28s", pDirectoryFiles[counter]);
+		  if (Storage_CheckBitmapFile((const char*)str, &uwBmplen) == 0)
+		  {
+			  BSP_DisplayImage(counter,pDirectoryFiles,nFiles,1,displayFilename);
 
-	  	        /* Wait for screen touch */
-	  	        while (1)
-	  	        {
-	  	        	if (BSP_TS_GetState(TS_State) != TS_OK)
-	  	        	{
-	  	        		Error_Handler();
-	  	        	}
-	  	        	else
-	  	        	{
-	  	        		if (TS_State->touchDetected == 1)
-	  	        		{
-	  	        			counter += ubNumberOfFiles;
-	  	        			if (TS_State->touchX[0] > 480/2)
-	  	        			{
-	  	        				counter++;
-	  	        			}
-	  	        			else {
-	  	        				counter--;
-	  	        			}
-	  	        			break;
-	  	        		}
-	  	        	}
-	  	        }
-
-	  	        counter %= ubNumberOfFiles;
-
-	  	      }
+			/* Wait for screen touch */
+			while (1)
+			{
+				if (BSP_TS_GetState(TS_State) != TS_OK)
+				{
+					Error_Handler();
+				}
 				else
 				{
-				  BSP_LCD_Clear(((uint32_t)0xFF000000));
-				  /* Set the Text Color */
-				  BSP_LCD_SetTextColor(LCD_COLOR_RED);
-
-				  BSP_LCD_DisplayStringAtLine(7, (uint8_t *) str);
-				  BSP_LCD_DisplayStringAtLine(8, (uint8_t*)"    File type not supported. ");
-				  while(1);
+					if (TS_State->touchDetected == 1)
+					{
+						counter += nFiles;
+						if (TS_State->touchX[0] > BSP_LCD_GetXSize()/2)
+						{
+							counter++;
+						}
+						else {
+							counter--;
+						}
+						break;
+					}
 				}
-	  	    } while (1);
+				if (BSP_PB_GetState(BUTTON_TAMPER) != RESET)
+				{
+					displayFilename++;
+					displayFilename &= 1;
+					BSP_DisplayImage(counter,pDirectoryFiles,nFiles,0,displayFilename);
+				}
+			}
+
+			counter %= nFiles;
+
+		  }
+			else
+			{
+			  BSP_LCD_Clear(LCD_COLOR_BLACK);
+			  /* Set the Text Color */
+			  BSP_LCD_SetTextColor(LCD_COLOR_RED);
+
+			  BSP_LCD_DisplayStringAtLine(7, (uint8_t *) str);
+			  BSP_LCD_DisplayStringAtLine(8, (uint8_t*)"    File type not supported. ");
+			  while(1);
+			}
+		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
 }
+  /* USER CODE END 3 */
 
 /**
   * @brief System Clock Configuration

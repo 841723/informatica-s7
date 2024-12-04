@@ -1,5 +1,5 @@
 ../Core/Src/fatfs_storage.c:17:10:Storage_Init	2
 ../Core/Src/fatfs_storage.c:30:10:Storage_OpenReadFile	6
-../Core/Src/fatfs_storage.c:94:10:Storage_CheckBitmapFile	4
-../Core/Src/fatfs_storage.c:115:10:Storage_GetDirectoryBitmapFiles	5
-../Core/Src/fatfs_storage.c:154:9:Buffercmp	3
+../Core/Src/fatfs_storage.c:97:10:Storage_CheckBitmapFile	4
+../Core/Src/fatfs_storage.c:118:10:Storage_GetDirectoryBitmapFiles	5
+../Core/Src/fatfs_storage.c:157:9:Buffercmp	3

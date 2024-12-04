@@ -13,7 +13,8 @@
 #include "sd_diskio.h"
 #include "BSP_aux.h"
 
-void BSP_DisplayImage(uint8_t index, char* pDirectoryFiles[25], uint8_t  ubNumberOfFiles);
+void BSP_DisplayImage(uint8_t index, char* pDirectoryFiles[25], uint8_t ubNumberOfFiles, uint8_t transparencyFade, uint8_t displayFilename);
+
 void BSP_DisplayButtons(void);
 
 #endif /* INC_BSP_AUX_H_ */

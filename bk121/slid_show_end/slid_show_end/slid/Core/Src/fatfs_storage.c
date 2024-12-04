@@ -27,7 +27,7 @@ uint32_t Storage_Init(void)
 }
 
 
-uint32_t Storage_OpenReadFile(uint8_t *Address, const char* BmpName)
+uint32_t Storage_OpenReadFile(uint8_t *Address, const char* BmpName, uint32_t *totalSize)
 {
   uint32_t index = 0, size = 0, i1 = 0;
   uint32_t BmpAddress;
@@ -45,12 +45,14 @@ uint32_t Storage_OpenReadFile(uint8_t *Address, const char* BmpName)
     {
     } 
   }
-  
+
+
   BmpAddress = (uint32_t)sector;
 
   /* Read bitmap size */
   size = *(uint16_t *) (BmpAddress + 2);
   size |= (*(uint16_t *) (BmpAddress + 4)) << 16;  
+  *totalSize = size;
  
   /* Get bitmap data address offset */
   index = *(uint16_t *) (BmpAddress + 10);
@@ -72,6 +74,7 @@ uint32_t Storage_OpenReadFile(uint8_t *Address, const char* BmpName)
     }
     size -= i1;
     f_read (&F1, sector, i1, (UINT *)&BytesRead);
+
 
     for (index = 0; index < i1; index++)
     {
